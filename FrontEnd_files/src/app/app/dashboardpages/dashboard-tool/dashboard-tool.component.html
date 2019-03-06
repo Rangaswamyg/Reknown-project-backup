@@ -1,0 +1,28 @@
+<div style="background-color: #774fe5">
+  <app-navbar></app-navbar>
+</div>
+<br>
+<div class="container-fluid">
+<div class="row" style="text-align: -webkit-center;">
+  <div class="col-md-2"></div>
+<div class="col-md-3">
+  <!-- probability -->
+  <img (click)="getprobability()" src="assets/template/dashboard/Probability Checker.png" alt="image not found" width="218px;">
+  <input type="radio" name="size" id="size_1" value="small" (click)="getprobability()"/>
+ <label for="size_1">Probability Checker</label>
+</div>
+<div class="col-md-3">
+    <img (click)="onMovetoshortlistingpage()" src="assets/template/dashboard/Shortlisting Universities.png" alt="image not found" width="218px;">
+  <input type="radio" name="size" id="size_2" value="small" (click)="onMovetoshortlistingpage()"/>
+  <label for="size_2">Shortlisting University</label>
+</div>
+<div class="col-md-3">
+    <img (click)="onMovetocomparisionpage()" src="assets/template/dashboard/Comparision Tool.png" alt="image not found" width="218px;">
+  <input type="radio" name="size" id="size_3" value="small" (click)="onMovetocomparisionpage()"/>
+  <label for="size_3" >Comparison Tool</label>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>
+<br>
+<app-footerpage></app-footerpage>

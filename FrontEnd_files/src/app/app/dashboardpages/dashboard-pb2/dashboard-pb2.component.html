@@ -1,0 +1,223 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+        <div class="vl"></div>
+      </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress" >
+          <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+          [style.width]="((this._probabilityService.profile_building_progress)*2.7)+'%'"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 54.svg" alt="image not found" width="25px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <hr style="width:1086px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+      <form [formGroup]="form" (submit)="onRegisterSubmit()">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-10 prob_aligncol">
+              <h3 class="prob_head">Your high school academic score</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="prob_text" style="font-size: 20px; font-weight: 600;">class XII academic details</p>
+
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+
+                  <h5 class="prob_text" style="font-weight: 600;" >
+                    <img src="assets/template/dashboard/Asset 61.svg" alt="not found" width="14px;"> &nbsp;&nbsp;
+                     
+                    <label for="files" class="btn">Upload XII Mark Sheet</label>
+                    <input id="files" style="display: none" multiple (change)="detectFiles($event.target.files)"  type="file" ></h5>
+                </div>
+              </div>
+              
+              <small style="color: #962fdc;">Board of Education & year of Graduation</small>
+              &nbsp;&nbsp;
+              <div class="row" style="padding-top: 8px;">
+                  <div class="col-md-2 selectdrp1">
+                      <div class="select-wrapper" > 
+                        <select id="dLabel2" class="decorated" name="syllabus_name_12th" formControlName="syllabus_name_12th" (change)="onchangeDropdownSyllabus12th($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.syllabus_name_12th.errors }">
+                            <option selected="selected">Syllabus</option>
+                          <option class="textclr" *ngFor="let s of syllabus">{{s}}</option>
+                          
+                        </select>
+                      </div>
+                      <div *ngIf="submitted && f.syllabus_name_12th.errors" >
+                        <div *ngIf="f.syllabus_name_12th.errors.required" style="color:red">Board is required</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 selectdrp2">
+                        <div class="select-wrapper1">
+                          <select id="dLabel1"  name="year_of_grad_12th" formControlName="year_of_grad_12th" (change)="onchangeDropdownYear12th($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.year_of_grad_12th.errors }">
+                            <option selected="selected">Year of Graduation</option>
+                            <option class="textclr" *ngFor="let yr of Year">{{yr}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="submitted && f.year_of_grad_12th.errors" >
+                          <div *ngIf="f.year_of_grad_12th.errors.required" style="color:red">year is required</div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 selectdrp1" >
+                          <div class="select-wrapper" style="width: 121px;">
+                            <select id="dLabel2" class="decorated" name="grading_12th" formControlName="grading_12th" (change)="onchangeDropdownGrade12th($event.target.value)" style="color:rgb(221, 215, 215)">
+                              <option selected="selected" >Grading</option>
+                              <option class="textclr" *ngFor="let grade of gradings">{{grade}}</option>
+                            </select>
+                            {{gradeMsg12th}}
+                          </div>
+                        </div>
+                      <div class="col-md-4 textbox">
+                          <div class="form-group">
+                            <input type="text" (click)="getAcademic12th()" name="academic_score_12th" formControlName="academic_score_12th" id="f_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.academic_score_12th.errors }">
+                            <label class="form-control-placeholder" for="f_name" style="padding-top: 9px;">Academic Score</label>
+                            <div *ngIf="submitted && f.academic_score_12th.errors" >
+                              <div *ngIf="f.academic_score_12th.errors.required" style="color:red">score is required</div>
+                            </div>
+                          </div>
+                        </div>
+              </div>
+              <br> 
+              <div class="row">
+                  <div class="col-md-6">
+                    <p class="prob_text" style="font-size: 20px; font-weight: 600;">class X academic details</p>
+  
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+  
+                    <h5 class="prob_text" style="font-weight: 600;">
+                      <img src="assets/template/dashboard/Asset 61.svg" alt="not found" width="14px;"> &nbsp;&nbsp; Upload X Mark Sheet</h5>
+                  </div>
+                </div>
+                <small style="color: #962fdc;">Board of Education & Year of Graduation</small>
+                <div class="row" style="padding-top: 8px;">
+                    <div class="col-md-2 selectdrp1">
+                        <div class="select-wrapper" > 
+                            <select id="dLabel2" class="decorated" name="syllabus_name_10th" formControlName="syllabus_name_10th" (change)="onchangeDropdownSyllabus10th($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.syllabus_name_10th.errors }">
+                                <option selected="selected">Syllabus</option>
+                              <option class="textclr" *ngFor="let s of syllabus">{{s}}</option>
+                              
+                            </select>
+                          </div>
+                          <div *ngIf="submitted && f.syllabus_name_10th.errors" >
+                            <div *ngIf="f.syllabus_name_10th.errors.required" style="color:red">year is required</div>
+                          </div>
+                         </div>
+                         <div class="col-md-4 selectdrp2">
+                            <div class="select-wrapper1">
+                                <select id="dLabel1"  name="year_of_grad_10th" formControlName="year_of_grad_10th" (change)="onchangeDropdownYear10th($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.year_of_grad_10th.errors }">
+                                  <option selected="selected">Year of Graduation</option>
+                                  <option class="textclr" *ngFor="let yr of Year">{{yr}}</option>
+                                  </select>
+                              </div>
+                              <div *ngIf="submitted && f.year_of_grad_10th.errors" >
+                                <div *ngIf="f.year_of_grad_10th.errors.required" style="color:red">year is required</div>
+                              </div>
+                         </div>
+                         <div class="col-md-2 selectdrp1" >
+                            <div class="select-wrapper" style="width: 121px;">
+                                <select id="dLabel2" class="decorated" name="grading_10th" formControlName="grading_10th" (change)="onchangeDropdownGrade10th($event.target.value)"  style="color:rgb(221, 215, 215)">
+                                  <option selected="selected" >Grading</option>
+                                  <option class="textclr" *ngFor="let grade of gradings">{{grade}}</option>
+                                </select>
+                                {{gradeMsg10th}}
+                              </div>
+                         </div>
+                         <div class="col-md-4 textbox">
+                            <div class="form-group">
+                                <input type="text" (click)="getAcademic10th()" name="academic_score_10th" formControlName="academic_score_10th" id="f_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.academic_score_10th.errors }" required>
+                                <label class="form-control-placeholder" for="f_name" style="padding-top: 9px;">Academic Score</label>
+                                <div *ngIf="submitted && f.academic_score_10th.errors" >
+                                  <div *ngIf="f.academic_score_10th.errors.required" style="color:red">year is required</div>
+                                </div>
+                              </div>
+                         </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="prob_bg_footer" style="width:118%;">
+          <div class="row">
+            <div class="col-md-2" style="padding-left: 45px;">
+              <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+            </div>
+            <div class="col-md-8 progress_align">
+              <!-- progress bar -->
+              <div class="progress" style="width:100%; top:0px; height:0.8rem; border-radius:0rem;">
+                <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+                  [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+              </div>
+              <p style="color: #962fdc;font-size: 12px;">6 of {{added_p_b.length}} Questions</p>
+
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-outline-success" type="submit">Next</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footerpage></app-footerpage>

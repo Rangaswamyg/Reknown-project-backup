@@ -1,0 +1,145 @@
+<div style="background-color: #296fdc">
+    <app-navbar></app-navbar>
+    </div>
+    <div class="container-fluid" style="padding-left: 73px;padding-right: 30px;">
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+           <p class="fontalgntxt">Probability result &nbsp;<i class="fa fa-angle-right"></i> &nbsp;{{this._probabilityService.prob_toolresult.uni_details.name}}</p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-md-12">
+             <h1 class="fontalgnhead">{{this._probabilityService.prob_toolresult.prob}}</h1>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+               <!-- <p class="fontalgntxt1">291 universities found</p> -->
+            </div>
+            <!-- <div class="col-md-6" style="padding-right: 90px;">
+                <div class="dropdwnalign">
+                    <div class="container">
+                    <a class=" btn text-muted dropdownfa" data-toggle="dropdown" href="#">Sort by</a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><a class="textclr">Item I</a></li>
+                      <li class="dropdown-item"><a class="textclr">Item II</a></li>
+                      <li class="dropdown-item"><a class="textclr">Item III</a></li>
+                      <li class="dropdown-item"><a class="textclr" href="#">Item IV</a></li>
+                      <li class="dropdown-item"><a class="textclr" href="#">Item V</a></li>
+                      <li class="dropdown-item"><a class="textclr" href="#">Other</a></li> 
+                     </ul>
+                  </div>
+                </div>
+            </div> -->
+          </div>
+        </div>
+          <hr style="border-top:1px solid rgba(0, 0, 0, 0.04);">
+          <br>
+    
+            <!-- filter and university details-->
+    <div class="container-fluid" style="padding-left: 73px;padding-right: 30px;">
+          <div class="row">
+            <div class="col-md-2"></div> 
+            <div class="col-md-7" style="padding-right: 0px;padding-left: 15px;">
+            <h3></h3>
+              <!-- University part-->
+              <!-- <div *ngFor="let probres of prob_result_uni | paginate: { itemsPerPage: 10, currentPage: p }; let i=index "> -->
+              <div class="card">
+                <div class="row no-gutters">
+                  <div class="col-auto">
+                    <div class="img-wrap">
+                      <img src="/assets/template/universityimages.jpg" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                  <div class="col bgcolor">
+                    <div class="card-block px-2">
+                     <h1 class="unihead">{{this._probabilityService.prob_toolresult.uni_details.name}}</h1>
+                     <p class="unitxt text-muted"><i class="fa fa-circle" style="font-size:6px;color:#774fe5;"></i> &nbsp;{{this._probabilityService.prob_toolresult.coun_details.name}}</p>
+                     <!--white panel-->
+                     <div class="panl">
+                     <div class="bgunidel">
+                     <div class="row">
+                    <div class="col-md-3">
+                      <p class="unitxt1 text-muted">University Status</p>
+                      <p class="unitxt2">Public</p>
+                    </div>
+                    <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                        <p class="unitxt1 text-muted">Duration of Study</p>
+                        <p class="unitxt2">2 Years</p>
+                      </div>
+                      <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship</p>
+                          <p class="unitxt2">Yes</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="unitxt1 text-muted">Total Students</p>
+                            <p class="unitxt2">12900</p>
+                          </div>
+                     </div>
+                    </div>
+                  </div>
+                   <!--button-->
+                   <!-- <div class="panl1">
+                   <button class="btn1 btn-outline-success-submt" type="submit">Add to Compare</button>&nbsp; &nbsp;
+                   <button class="btn1 btn-outline-success-submt" type="submit">Check Probability</button>
+                  </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+            <!-- </div> -->
+              <!--sample-->
+              <!-- University part-->
+              
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <br>
+          <br> 
+        </div> 
+        <div class="container-fluid">
+           <!--showing result-->
+           <div class="row">
+              <div class="col-md-3"></div>
+             <div class="col-md-6">
+                 <div class="paginatn">
+                  <div class="paginatntxt">
+                    <!-- Showing 1-6 of 291 results -->
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    <!--pagination-->
+                   <!-- <div style="float:right;padding-right:30px;">
+                    <div class="pagination">
+                      <span>
+                        <a class="page-link" href="#">1</a>
+                      </span>
+                      <span class="pagintnspace">
+                        <a class="page-link" href="#">2</a>
+                      </span>
+                      <span class="pagintnspace">
+                        <a class="page-link" href="#">3</a>
+                      </span>
+                      <span class="pagintnspace">
+                        <a class="page-link" href="#">4</a>
+                      </span>
+                      <span class="pagintnspace">
+                        <a class="page-link" href="#">5</a>
+                      </span>
+                      <span class="pagintnspace1">
+                          <a class="pagelinktxt" href="#">Next</a>
+                        </span>
+                    </div>
+                  </div> -->
+                  </div>
+                 </div>
+             </div>
+             <div class="col-md-3"></div>
+            </div>
+            <br>
+            </div>
+           
+            
+         <app-footerpage></app-footerpage>

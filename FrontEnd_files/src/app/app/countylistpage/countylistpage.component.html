@@ -1,0 +1,139 @@
+<div style="background-color: #774fe5">
+  <app-navbar></app-navbar>
+</div>
+<br>
+
+<div class="container-fluid topsectionalign">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="fontalgntxt">Countries &nbsp;
+        <i class="fa fa-angle-right"></i> &nbsp;All Countries </p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="fontalgnhead">Study abroad countries</h1>
+    </div>
+  </div>
+  <br>
+  <p>Find the study abroad destination that's perfect for you</p>
+</div>
+<hr>
+<br>
+<br>
+<div class="container-fluid topsectionalign">
+  <h2 class="fontalgnhead" style="display: flex;">Browse across various countries
+  <form [formGroup]="form" novalidate style="padding-left:296px;">
+            <div >
+                <input  type="text" (click)='contoggleDropdown()' formControlName='search' placeholder="Enter your country" required="required">
+
+                <div *ngIf="showDropdown" class="country-container-dropdown" >
+                  <div class="country" (click)="countryselectValu(c,c.name)"*ngFor="let c of countryList | searchFilter1:getSearchValue()">
+                      {{c.name}}
+                  </div>
+                   </div>
+              </div>
+        </form>
+      </h2>
+  <br>
+  <br>
+  <div id="rcorners2">
+    <br>
+    <h5>Popular Destination</h5>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-4" style="padding-bottom: 15px;" *ngFor="let c of countryList  | slice:0:show | searchFilter1:getSearchValue(); let i=index">
+        <div id="country">
+          <div class="row" style="text-align: center;">
+            <div class="col-md-6 " style="border-right: 2px solid gray;right:6px;">
+                <a routerLink="/countrypage/{{c.cid}}"><img src="{{c.flag}}" alt="not avilable" style="width:110px;height: 70px;" (click)="onAddData(i)"></a>
+              <br>
+              <a routerLink="/countrypage/{{c.cid}}"><h6 (click)="onAddData(c)" style="padding-bottom: 0px;padding-top: 7px;font-weight: 800;">Study in {{c.name}}</h6></a>
+
+            </div>
+            <div class="col-md-6"style="top:14px;left:4px; ">
+              <div class="row" >
+                <div class="col-md-6 ">
+                  <div id="roundcheck">
+                  <div class="checktd" style="display: contents;">
+                    <i class="fa fa-check checkmark"></i>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-6" style="bottom: 5px; padding-right: 160px;left:24px;">
+                  <p style="color:black;font-size: 15px; display: block;margin-bottom: 5px;"> {{c.uni_count}}&nbsp;Universities</p>
+                </div>
+                <div class="col-md-6 " id="roundcheck">
+                    <div class="checktd" style="display: contents;">
+                      <i class="fa fa-check checkmark"></i>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="row" >
+                  <div class="col-md-6 ">
+                    <div id="roundcheck">
+                    <div class="checktd" style="display: contents;">
+                      <i class="fa fa-check checkmark"></i>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-md-6" style="bottom: 5px;padding-right: 160px;left:24px;">
+                    <p style="color:black;font-size: 15px; display: block;margin-bottom: 5px;"> {{c.co_count}}&nbsp;Programs</p>
+                  </div>
+                  <div class="col-md-6 " id="roundcheck">
+                      <div class="checktd" style="display: contents;">
+                        <i class="fa fa-check checkmark"></i>
+                      </div>
+                    </div>
+
+                </div>
+                <div class="row" >
+                    <div class="col-md-6 ">
+                      <div id="roundcheck">
+                      <div class="checktd" style="display: contents;">
+                        <i class="fa fa-check checkmark"></i>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6" style="bottom: 5px; padding-right: 160px;left:24px;">
+                      <p style="color:black;font-size: 15px; display: block;margin-bottom: 5px;"> {{c.students_count}}&nbsp;Students/year</p>
+                    </div>
+                    <div class="col-md-6 " id="roundcheck">
+                        <div class="checktd" style="display: contents;">
+                          <i class="fa fa-check checkmark"></i>
+                        </div>
+                      </div>
+
+                  </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+      <br>
+      <div  style="display: inline-flex; padding-left: 600px;">
+      <div *ngIf="btn" class="btncenter" style="padding-right: 23px;">
+          <button  *ngIf="show < countryList.length" (click)="increaseShow()" class="btn btn-outline-success" type="submit">Show More</button>
+      </div>
+      <div *ngIf="btn1" class="btncenter">
+        <button  *ngIf="show < countryList.length" (click)="increaseShowAll()" class="btn btn-outline-success" type="submit">Show All</button>
+    </div>
+  </div>
+  </div>
+
+</div>
+<br>
+<app-footerpage></app-footerpage>
+

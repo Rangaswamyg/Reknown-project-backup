@@ -1,0 +1,194 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+        <div class="vl"></div>
+      </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"  style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+          [style.width]="((this._probabilityService.profile_building_progress)*2.7)+'%'"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 54.svg" alt="image not found" width="25px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <hr style="width:1086px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-10 prob_aligncol">
+              <h3 class="prob_head">Your internships and work related information
+              </h3>
+              <div class="scrollbar">
+                <div class="overflow">
+                  <div formArrayName="internship_and_work">
+                    <div *ngFor="let workinformations of form.controls.internship_and_work['controls']; let i=index">
+                      <p class="prob_subtext">Work Information - {{i+1}}
+                        <!-- close button -->
+                        <a *ngIf="form.controls.internship_and_work['controls'].length > 1" (click)="removeworkinfo(i)" style="cursor: default;"
+                          class="closebtn" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </a>
+                      </p>
+                      <div [formGroupName]="i">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <input type="text" id="employer_name{{i+1}}" (click)="getEmplyoe(emp)" class="form-control" name="emp" formControlName="emp"
+                                required>
+                              <label class="form-control-placeholder" for="employer_name{{i+1}}">Employer</label>
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <input type="text" id="job_title{{i+1}}" class="form-control" (click)="getTitle(title)" name="title" formControlName="title"
+                                required>
+                              <label class="form-control-placeholder" for="job_title{{i+1}}">Job Title</label>
+                            </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="prob_aligncol1">
+                              <div class="select-wrapper">
+                                <select id="dLabelemployment" name="type" formControlName="type" (change)="onchangedropdownEvent($event.target.value)">
+                                  <option selected="selected">Employment Type</option>
+
+                                  <option class="textclr" *ngFor="let e of employmenttypes">{{e}}</option>
+
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <!-- dropdown -->
+                            <div class="prob_aligncol1">
+                              <div class="select-wrapper">
+                                <select id="dLabelexperience" name="exp" formControlName="exp" (change)="onchangedropdownExp($event.target.value)">
+                                  <option selected="selected">Years of Experience</option>
+                                  <option class="textclr" *ngFor="let y of year">{{y}}</option>
+
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                        <div class="checkbxalign">
+                          <p class="prob_wrkqus">Currently working with this company?</p>
+                          <div *ngFor="let currentwork of currentWorks">
+                            <label class="customcheck">{{currentwork.name}}
+                              <input type="radio" name="current_com" formControlName="current_com" [value]="currentwork.name">
+                              <span class="checkmark"></span>
+                            </label>&nbsp;</div>
+
+                        </div>
+                        <br>
+                        <div class="checkbxalign">
+                          <p class="prob_wrkqus">Have you done any internships?</p>
+                          <div *ngFor="let i of intern">
+                            <label class="customcheck" style=" padding-right: 7px;">{{i.name}}
+                              <input type="radio" (click)="getValue(i.name)" name="internstatus" formControlName="internstatus" [value]="i.name">
+                              <span class="checkmark"></span>
+                            </label>&nbsp;</div>
+                          <div class="form-group" *ngIf="this.buttonSel=='Yes'" style="left: 69px; top: 16px;">
+                            <input type="text" id="job_title{{i+1}}" class="form-control" name="intership" formControlName="intership" required>
+                            <label class="form-control-placeholder" for="job_title{{i+1}}">No Year</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="addfield">
+                      <a (click)="addworkinfo()" style="cursor: default">
+                        Add another internships or work related information
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <br>
+      <br>
+      <div class="prob_bg_footer" style="width:118%;">
+        <div class="row">
+          <div class="col-md-2" style="padding-left: 45px;">
+            <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+          </div>
+          <div class="col-md-8 progress_align">
+            <!-- progress bar -->
+            <div class="progress" style="width:100%; top:0px; height:0.8rem; border-radius:0rem;">
+              <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+                [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+            </div>
+            <p style="color: #962fdc;font-size: 12px;">5 of {{added_p_b.length}} Questions</p>
+
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-outline-success" type="submit">Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<app-footerpage></app-footerpage>

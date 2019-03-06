@@ -1,0 +1,30 @@
+@font-face {
+    font-family:"Product Sans";
+    src: url("/assets/template/product-sans/ProductSans-Regular.ttf") format("truetype");
+  }
+/* Conatiner */
+#corner {
+    border-radius: 10px;
+    background:#a9a9a914;
+    padding: 20px; 
+      
+    text-align: -webkit-center;
+  }
+  /* Image section */
+  .img1{
+    background: url("/assets/template/probabilitypageimg/9.png") center center/cover no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 244px;
+    height: 206px;
+  }
+  /* Button */
+  .btn{
+    width:150px;
+    background-color: #28a745;
+    color: white;
+    font-size:15px;
+    font-weight: 500;
+    border-radius: 6px;
+ }

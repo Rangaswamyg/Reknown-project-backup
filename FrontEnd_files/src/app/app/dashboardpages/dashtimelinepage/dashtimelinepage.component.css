@@ -1,0 +1,194 @@
+/* .container-fluid{
+    padding-left: 15px;
+    padding-right: 15px;
+} */
+.vl {
+  border-left: 1px solid #ccc;
+    box-shadow: 0 3px 10px #e2e0e0;
+  height:100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+.text_timeline{
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 40px;
+  color: #737272;
+}
+p{
+  margin-bottom: 0px;
+}
+.left_navbar{
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 15px;
+}
+.img_width{
+width: 22px;
+}
+.text_timeline:hover{
+color: #774fe5;
+}
+.text_timeline:active{
+color: #774fe5;
+}
+.btn-outline-success{
+  font-size: 14px;
+color: white;
+border-color:#28a745;
+width:120px;
+ height: 34px;
+ float: right;
+ padding-top: 4px;
+ background-color: #28a745;
+}
+  #rcorners2 {
+    border-radius: 9px;
+    border: 2px solid #cccccc45;
+    box-shadow:  3px 3px #d2d0d0;
+    padding: 20px; 
+    width: 100%;
+    height: auto;  
+  }
+  #firstcircle {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  width: 50px;
+  height: 50px;  
+  padding-top:8px;
+  text-align: center; 
+  }
+  * progress bar */
+.progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:7px;
+    top:20px;
+    position: relative;
+    width:24%;
+    
+    border-radius:0rem;
+}
+#insidePanel {
+  border-radius: 9px;
+  border: 1px solid #cccccc45;
+  /* box-shadow:  3px 3px #d2d0d0; */
+  padding: 20px; 
+  width: 100%;
+  height: auto;  
+}
+.progressmbl{
+  padding-left: 30px;
+}
+.progressimgWidth{
+  width: 25px;
+}
+.timelinetext{
+  color: #ccc;
+}
+.nextbtncenteralign{
+  left:17px;
+}
+/* mobile Response */
+@media (min-width: 350px) and (max-width: 450px) 
+{
+  .text_timeline{
+    font-size:15px;
+    padding-bottom:30px;
+  }
+  .timelinehead{
+    font-size: 17px;
+    text-align: center;
+  }
+  #firstcircle{
+    width:40px;
+    height:40px;
+    padding-top:4px;
+  }
+  .progressimgWidth{
+    width: 18px;
+  }
+  .prfltxt{
+    font-size:18px;
+    text-align: center;
+  }
+  .timelinetext{
+    text-align: center;
+    font-size:15px; 
+  }
+  .btn-outline-success{
+    float : none;
+  }
+  .btncenteralign{
+    text-align: center;
+  }
+  .nextbtncenteralign{
+    left:0px;
+    text-align: center;
+  }
+  
+  .responsivembl{
+    display: none;
+  }
+  .arrowrightmbl{
+    display: none;
+  }
+
+}
+
+@media (min-width: 350px) and (max-width: 375px) 
+{
+  .left_navbar{
+    padding-top: 20px;
+    padding-left: 120px;
+    padding-right: 0px;
+    /* text-align: center; */
+  }
+  .progressmbl{
+    padding-left: 5px;
+  }
+}
+
+
+@media (min-width: 376px) and (max-width: 400px) 
+{
+  .left_navbar{
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 0px;
+    /* text-align: center; */
+  }
+  .progressmbl{
+    padding-left: 5px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 450px) 
+{
+  .left_navbar
+  {
+    padding-top: 20px;
+    padding-left: 160px;
+    padding-right: 0px;
+    /* text-align: center; */
+  }
+  .progressmbl{
+    padding-left: 20px;
+  }
+}
+@media (min-width: 430px) and (max-width: 450px) 
+{
+  .progress{
+    width: 18% !important;
+  }
+}
+@media (min-width: 350px) and (max-width: 430px) 
+{
+  .progress{
+    width: 13% !important;
+  }
+  
+}

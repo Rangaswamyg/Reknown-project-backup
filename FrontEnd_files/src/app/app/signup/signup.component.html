@@ -1,0 +1,291 @@
+<div style="background-color: #774fe5">
+    <app-navbar></app-navbar>
+    </div>
+    
+    <div class="container-fluid sign1">
+        <div class="row sign2">
+          <div class="col-md-4 imgaligndsk">
+            <img src="/assets/template/signup.png" alt="Logo" class="img_widthmbl">
+          </div>
+          <div class="col-md-8">
+            <p class="mbltext">
+              <span class="nowrap sign3">Sign Up</span>&nbsp;
+              <span class="nowrap logn_text" (click)="this._service.openModallogin(templatelogin)">Already Registered ? Login</span>
+            </p>
+            <p class="sign4">Find out more about the universities and courses that match yous preferences.</p>
+          </div>
+        </div>
+      </div>
+    <div class="container signupcontainer">
+      <!--Personal info-->
+      <br>
+      <h3 class="signuphead">Your personal details</h3>
+      <p class="signuptxt">This will create your account and enable you to receive recommendations (you can opt-out anytime)</p>
+      <form [formGroup]="form" (submit)="onRegisterSubmit(template)">
+        <div class="row">
+          <div class="col-md-5" style="padding-top: 30px;">
+            <div class="form-group">
+              <input type="text" name="firstname" formControlName="firstname" id="f_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" required>
+              <label class="form-control-placeholder" for="f_name" >First Name</label>
+              <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstname.errors.required">First Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 signuplastname">
+            <div class="form-group">
+              <input type="text" name="lastname" formControlName="lastname" id="l_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" required>
+              <label class="form-control-placeholder" for="l_name">Last Name</label>
+              <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5" style="padding-top: 27px;">
+              <div class="form-group">
+                <input type="email" name="email" formControlName="email" id="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+                <label class="form-control-placeholder" for="email_id">Email Id</label>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 signupcurrentcountry">
+                <div class="select-wrapper">
+                    <select id="dLabelcurrentcity" name="current_country" formControlName="current_country" (change)="onchangeselectedcountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.current_country.errors }">
+                      <option selected="selected">Current Country</option>
+                      <option class="textclr" *ngFor="let current_country of countrydetails_signup">{{current_country.name}}</option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && f.current_country.errors" class="error-text">
+                    <div *ngIf="f.current_country.errors.required">Country is required</div>
+                </div>
+              </div>
+          </div>
+          <!-- password and confirm password -->
+          <div class="row">
+              <div class="col-md-5" style="padding-top: 30px;">
+                <div class="form-group">
+                  <input type="password" name="password" formControlName="password" id="passowrd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+                  <label class="form-control-placeholder" for="password" >Password</label>
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-6 signupconfirmpassword">
+                <div class="form-group">
+                  <input type="password" name="cnfpassword" formControlName="cnfpassword" id="c_password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cnfpassword.errors }" required>
+                  <label class="form-control-placeholder" for="c_password">Confirm Password</label>
+                  <div *ngIf="submitted && f.cnfpassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.cnfpassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.cnfpassword.errors.mustMatch">Passwords must match</div>
+                </div>
+                </div>
+              </div>
+            </div>
+          <!-- mobile number -->
+          <div class="row">
+              <div class="col-md-5" style="padding-top: 22px;">
+                <!-- current country -->
+                <div class="select-wrapper">
+                    <select id="dLabelcurrentcity_sign" name="current_city" formControlName="current_city" [ngClass]="{ 'is-invalid': submitted && f.current_city.errors }">
+                      <option value="null">Current City</option>
+                      <option class="textclr" value="{{current_city}}" *ngFor="let current_city of city_signup">{{current_city}}</option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && f.current_city.errors" class="error-text">
+                    <div *ngIf="f.current_city.errors.required">City is required</div>
+                </div>
+                </div>
+                <div class="col-md-1"></div>
+            <div class="col-md-6 signupcountrycode">
+              <div class="row">
+                <div class="col-md-5" style="padding-top: 22px" >
+                    <div class="form-group mx-sm-7 mb-3">
+                        <div class="select-wrapperprsnl">
+                            <select id="dLabelpersnl" name="country_code" formControlName="country_code" [ngClass]="{ 'is-invalid': submitted && f.country_code.errors }">
+                              <option value ="null">Country Code</option>
+                              <option class="textclr" value="{{country_code.name}}({{country_code.dial_code}})" *ngFor="let country_code of countrydetails_signup | Signupcountry : current_country">{{country_code.name}}({{country_code.dial_code}})</option>
+                            </select>
+                          </div>   
+                        <div *ngIf="submitted && f.country_code.errors" class="error-text">
+                        <div *ngIf="f.country_code.errors.required">Country Code is required</div>
+                       </div>
+                    </div>
+                </div>
+                <div class="col-md-7" style="padding-top: 23px;">
+                  <div class="form-group">
+                    <input type="text" name="mobilenumber" formControlName="mobilenumber" id="mobile_num" class="form-control" (keypress)="keyPress($event)" [ngClass]="{ 'is-invalid': submitted && f.mobilenumber.errors }" required>
+                    <label class="form-control-placeholder" for="mobile_num">Mobile Number</label>
+                    <div *ngIf="submitted && f.mobilenumber.errors" class="invalid-feedback">
+                      <div *ngIf="f.mobilenumber.errors.required">MobileNumber is required</div>
+                      <div *ngIf="f.mobilenumber.errors.minlength">Please enter valid mobile number</div>
+                      <div *ngIf="f.mobilenumber.errors.maxlength">Please enter valid mobile number</div>
+                  </div>
+                  </div>
+                  </div>
+                  <div>
+                  <p class="text-muted" style="padding-left: 14px;">OTP will be sent to this number.</p>
+                </div>
+                </div>
+            </div>
+          </div>
+      
+      <!--current edu-->
+     <h3 class="signuphead">Your current education details</h3>
+     <p class="signuptxt">Accurate details will help us match you with the right universities and schlarships</p>
+     <div class="row" style="padding-top: 15px;padding-bottom: 20px;">
+     <div class="col-md-5">
+      <div class="select-wrapper">
+              <select id="dLabel" class="decorated" name="qualification" formControlName="qualification" (change)="OnchangeQualification($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }">
+                <option selected="selected">Qualification</option>
+                <option class="textclr" *ngFor="let currenteducations of currenteducation">{{currenteducations._id}}</option>
+              </select>
+            </div>
+            <div *ngIf="submitted && f.qualification.errors" class="error-text">
+           <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+          </div>
+     </div>
+     <div class="col-md-1"></div>
+     <div class="col-md-6 signupspec">
+      <div class="select-wrapper">
+        <select id="dLabel2" name="specialization" formControlName="specialization" [ngClass]="{ 'is-invalid': submitted && f.specialization.errors }">
+          <option selected="selected">Specialization</option>
+          <option class="textclr" *ngFor="let spc of specializations">{{spc}}</option>
+        </select>
+      </div>
+      <div *ngIf="submitted && f.specialization.errors" class="error-text">
+        <div *ngIf="f.specialization.errors.required">Specialization is required</div>
+    </div>
+    </div>
+     </div>
+    <!--Future edu-->
+    <h3 class="signuphead">Your future education preference</h3>
+    <p class="signuptxt">This will help us show you only relevant information</p>
+    <div class="row" style="padding-top:15px;">
+        <div class="col-md-6">
+            <h5 class="signupQus">When do you plan to start your studies?</h5>
+            <div class="row" style="padding-top:15px;">
+                    <div class="col-md-4 checkbxmbl" *ngFor="let future_year of future_years"> 
+                        <label class="customcheck">{{future_year.year}}
+                         <input type="radio" [value]="future_year.year" name="future_year" formControlName="future_year" [ngClass]="{ 'is-invalid': submitted && f.future_year.errors }">
+                          <span class="checkmark"></span>
+                        </label></div>
+                        <div *ngIf="submitted && f.future_year.errors" class="error-text">
+                            <div *ngIf="f.future_year.errors.required">Future Plan is required</div>
+                        </div>
+              </div>
+        </div>
+      <div class="col-md-6 signupprgramlevel">
+          <h5 class="signupQus">Program Level</h5>
+          <div class="row" style="padding-top:15px;">
+              <div class="col-md-4 checkbxmbl" *ngFor="let program_level of program_levels"> 
+                  <label class="customcheck">{{program_level.level}}
+                  <input type="radio" [value]="program_level.level" name="program_level" formControlName="program_level" [ngClass]="{ 'is-invalid': submitted && f.program_level.errors }">
+                   <span class="checkmark"></span>
+                  </label></div>
+                  <div *ngIf="submitted && f.program_level.errors" class="error-text">
+                      <div *ngIf="f.program_level.errors.required">Program Level is required</div>
+                  </div>
+            </div>
+      </div>
+    </div>
+  <!--dropdown for country and area interest-->
+  <div class="row" style="padding-top: 15px;padding-bottom:15px;">
+      <div class="col-md-5">
+          <div class="select-wrapper">
+              <select id="dLabelfuturecountry" name="preferred_country" formControlName="preferred_country" [ngClass]="{ 'is-invalid': submitted && f.preferred_country.errors }">
+                <option selected="selected">Preferred Country</option>
+                <option class="textclr" *ngFor="let preferredcountry of countrydetails_signup">{{preferredcountry.name}}</option>
+              </select>
+            </div>
+            <div *ngIf="submitted && f.preferred_country.errors" class="error-text">
+              <div *ngIf="f.preferred_country.errors.required">Preferred Country is required</div>
+          </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3 signupareaint">
+          <div class="select-wrapper1">
+              <select id="dLabel1" name="area_interest" formControlName="area_interest" [ngClass]="{ 'is-invalid': submitted && f.area_interest.errors }">
+                <option selected="selected">Area of Interest</option>
+                <option>no data</option>
+                <!-- <option class="textclr" *ngFor="let area_interest of currenteducation">{{area_interestlist}}</option> -->
+              </select>
+            </div>
+            <div *ngIf="submitted && f.area_interest.errors" class="error-text">
+              <div *ngIf="f.area_interest.errors.required">Area interest is required</div>
+          </div>
+      </div>
+      <div class="col-md-3 signupareaint">
+          <div class="select-wrapper1">
+              <select id="dLabelfuturespec" name="future_specialization" formControlName="future_specialization" [ngClass]="{ 'is-invalid': submitted && f.future_specialization.errors }">
+                <option selected="selected">Specialization</option>
+                <option>no data</option>
+                <!-- <option class="textclr" *ngFor="let futurespecializations of currenteducation">{{futurespecialization.specialization}}</option> -->
+              </select>
+            </div>
+            <div *ngIf="submitted && f.future_specialization.errors" class="error-text">
+            <div *ngIf="f.future_specialization.errors.required">Specialization is required</div>
+           </div>
+      </div>
+      </div>
+      <br>
+      <div class="row">
+            <div class="col-md-6">
+              <h5 class="signupQus">How do u know about us?</h5>
+              <div class="select-wrapper signupabout">
+                <select id="dLabelfuturecountry" name="reach_website" formControlName="reach_website" [ngClass]="{ 'is-invalid': submitted && f.reach_website.errors }">
+                  <option selected="selected">Select Options</option>
+                  <option class="textclr" *ngFor="let u of options">{{u}}</option>
+                </select>
+              </div>
+              <div *ngIf="submitted && f.reach_website.errors" class="error-text">
+                <div *ngIf="f.reach_website.errors.required">Option is required</div>
+            </div>
+            </div>
+          </div>
+      <br>
+  
+    <label class="customcheck"><span class="text-muted">Yes, I have read and provide my consent for my data to be processed for the purposes as mentioned in the Privacy Policy and Terms & Conditions.</span>
+        <input type="checkbox" name="privacypolicy_termscondition" formControlName="privacypolicy_termscondition" ng-true-value="true" ng-false-value="false" [ngClass]="{ 'is-invalid': submitted && f.privacypolicy_termscondition.errors }">
+        <span class="checkmark"></span>
+      </label>
+      <div *ngIf="submitted && f.privacypolicy_termscondition.errors" class="error-text">
+      <div *ngIf="f.privacypolicy_termscondition.errors.required">Please Check this Privacy Policy and Terms & Conditions</div>
+      </div>
+      <label class="customcheck"><span class="text-muted">I agree to be contacted for services related information and promotional purposes.</span>
+          <input type="checkbox" name="agreement_info" formControlName="agreement_info" ng-true-value="true" ng-false-value="false" [ngClass]="{ 'is-invalid': submitted && f.agreement_info.errors }">
+          <span class="checkmark"></span>
+        </label>
+        <div *ngIf="submitted && f.agreement_info.errors" class="error-text">
+          <div *ngIf="f.agreement_info.errors.required">Please Check this services related information</div>
+          </div>
+        <br>
+        <div class="btncenter">
+            <button class="btn btn-outline-success" type="submit"><b>Sign Up</b></button>
+        </div>
+      </form>
+      <!-- otp popup -->
+      <ng-template #template>
+        <app-otpverification></app-otpverification>
+  </ng-template>
+      <!-- popup -->
+  
+      <!-- lognin popup -->
+      <ng-template #templatelogin>
+        <app-login></app-login>
+          </ng-template>
+      <!-- login popup -->
+        <br><br>
+    </div>
+    <br>
+  <app-footerpage></app-footerpage>
+  

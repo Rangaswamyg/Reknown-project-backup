@@ -1,0 +1,100 @@
+.container-fluid{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.Dash_head{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.Dash_txt{
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+/* cards */
+
+body { background: transparent }
+
+
+
+
+.card {
+	background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width:85%;
+}
+
+[class*="row"] {
+	margin-bottom: 1em;
+  justify-content: center;
+}
+
+[class*="col-"] {
+	background: transparent ;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+}
+.txtalign{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+.card_textalign{
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+}
+.card-title{
+    margin-bottom:5px;
+}
+.hr_style{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 50%;
+}
+.cardtxt_align{
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.card_blk{
+   padding: 30px;
+}
+/* button */
+.btn-outline-success{
+    color:#fff;
+    font-weight:400;
+    font-size: 16px;
+    border-color:#52b14a;
+    background-color: #52b14a;
+    width:140px;
+     height: 34px;
+     padding-top: 4px;
+  }
+  .btn:hover{
+    background-color:#52b14a;
+  }
+  .btn_center{
+    text-align:center;
+  }
+  .shw_text{
+      text-align: center;
+      color: #774fe5;
+      cursor: pointer;
+      font-size: 13px;
+      margin-bottom: 0px;
+  }
+
+  @media (min-width: 350px) and (max-width: 450px) {
+    .centercardalign{
+     text-align: -moz-center;
+     text-align : -webkit-center;   
+    }
+  }
+  

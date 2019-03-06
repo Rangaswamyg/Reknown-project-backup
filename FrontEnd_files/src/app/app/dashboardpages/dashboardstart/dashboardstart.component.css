@@ -1,0 +1,62 @@
+.container-fluid{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.txtalign{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+.card_textalign{
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+/* cards */
+body { background: transparent }
+
+.card {
+	background: #a9a9a914;
+    box-shadow: 0 3px 10px rgba(88,87,87,0.1);
+    /* width:85%; */
+}
+
+[class*="row"] {
+	margin-bottom: 1em;
+  justify-content: center;
+}
+
+[class*="col-"] {
+	background: transparent ;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+}
+/* button */
+.btn-outline-success{
+    color:#fff;
+    font-weight:400;
+    font-size: 16px;
+    border-color:#52b14a;
+    background-color: #52b14a;
+    width:140px;
+     height: 34px;
+     padding-top: 4px;
+  }
+  .btn:hover{
+    background-color:#52b14a;
+  }
+  .btn_center{
+    text-align:center;
+  }
+  .card_blk{
+    padding: 30px;
+ }
+ .img_align{
+     width:60%;
+ }
+ .img_padding{
+    padding-bottom: 10px;
+ }

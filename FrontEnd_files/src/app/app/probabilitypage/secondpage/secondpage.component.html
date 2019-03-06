@@ -1,0 +1,110 @@
+<!--navbar-->
+<div style="background-color: #774fe5">
+    <app-navbar></app-navbar>
+  </div>
+  
+  <!-- body -->
+  <form [formGroup]="form" (submit)="onRegisterSubmit()" autocomplete="off">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 prob_aligncol">
+          <!-- application -->
+          <div class="prob_bg">
+            <h3 class="prob_head">Your future education preference
+              <!-- close button -->
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </h3>
+            <p class="prob_text">Add universities you would like to study</p>
+            <div class="row">
+            <div class="col-md-6" style="position:relative;top: 20px;">
+                <div class="select-wrapper">
+                    <select id="dLabelcountry" name="country" formControlName="country"  (change)="onchangeDropdownCountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                      <option selected="selected">Preferred Country</option>
+                      <option class="textclr" *ngFor="let con of countrylist" >{{con._id.name}}</option>
+                     
+                    </select>
+                   <span class="error-text">{{msg}}</span>
+                  </div>
+                  <div *ngIf="submitted && f.country.errors" class="error-text">
+                      <div *ngIf="f.country.errors.required">Preferred Country is required</div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <p class="prob_text">Program Level</p>
+                <div class="row">
+                <div *ngFor="let program_level of programlist">
+                    <div class="col-md-4" > 
+                <label class="customcheck">{{program_level.level}}
+                    <input type="radio" id="checkBoxId" name="pl" formControlName="pl" [value]="program_level.level" [ngClass]="{ 'is-invalid': submitted && f.pl.errors }">
+                    <span class="checkmark" (click)="checkLevel(program_level.level)"></span>
+                  </label>
+                  </div>
+                </div>
+                <div *ngIf="submitted && f.pl.errors" class="error-text">
+                    <div *ngIf="f.pl.errors.required">Program Level is required</div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="row" style="position: relative;top:25px;">
+              <div class="col-md-6">
+                  <div class="select-wrapper" >
+                      <select id="dLabelcountry_spec" name="aoi" formControlName="aoi" (change)="onchangeDropdownSpec($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.aoi.errors }">
+                        <option selected="selected">Specialization</option>
+                        <option class="textclr" *ngFor="let sp_name of specializationlist"><div *ngFor="let s of sp_name.records">{{s.name}}</div></option>
+                      </select>
+                    </div>
+                    <div *ngIf="submitted && f.aoi.errors" class="error-text">
+                        <div *ngIf="f.aoi.errors.required">Course Specialization is required</div>
+                    </div>
+              </div>
+            <div class="col-md-6">
+                <!-- <form [formGroup]="form" novalidate> -->
+                    <div class="form-group">
+                        <input autocomplete="off" type="text" class="form-control" name="uni_f" formControlName='uni_f' (click)='contoggleDropdown()' placeholder="Select University" [ngClass]="{ 'is-invalid': submitted && f.uni_f.errors }" required>
+                        <!-- <label class="form-control-placeholder" for="c_name" >Select Course Specialization</label> -->
+                      <!-- custom auto complete -->
+                      <div *ngIf="showDropdown" class="country-container-dropdown">
+                        <div class="countryalignmnt" (click)="universityselectValue(u,u.name)"*ngFor="let u of unique_arr | searchFilterUni:getSearchValue()">{{u.name}}</div>
+                    </div>
+                    <div *ngIf="submitted && f.uni_f.errors" class="invalid-feedback">
+                        <div *ngIf="f.uni_f.errors.required">Please select university</div>
+                    </div>
+                      </div>  
+                      <!-- </form> -->
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="imgcenter">
+            <img class="prob_img" src="../assets/template/probabilityimg1.svg" alt="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <br><br>
+  <div class="prob_bg_footer">
+  <div class="row">
+  <div class="col-md-2" style="padding-left: 80px;">
+    <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+  </div>
+  <div class="col-md-8 progress_align">
+  <!-- progress bar -->
+  <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="100"
+      aria-valuemax="100" [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-outline-success" type="submit" >Next</button>
+  </div>
+  </div>
+    </div>
+  </form>
+  <!-- body -->
+  <!--footer-->
+  <app-footerpage></app-footerpage>

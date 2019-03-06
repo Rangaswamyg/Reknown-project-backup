@@ -1,0 +1,142 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+<!-- timeline navbar -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+      <div class="vl"></div>
+    </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div *ngIf="!hiddenTopnav()">
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+                                        [style.width]="(this._probabilityService.profile_building_progress)+'%'">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle1" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 65.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle"  style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle"  style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 70px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    
+      <hr style="width:1140px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+    </div>
+       <!-- profile buliding info -->
+       <div class="container-fluid">
+         <!-- personal info -->
+<div class="row">
+  <div class="col-md-9">
+    <h4 class="pbinfo_head" *ngIf="this._service.userinfo">{{this._service.userinfo.firstname}}&nbsp;{{this._service.userinfo.lastname}} &nbsp;&nbsp;<span class="round1">PG Applicant</span></h4>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="pbinfo_text" *ngIf="this._service.userinfo"><img src="assets/template/dashboard/Asset 71.svg" alt="Dash_img1" class="img_width_info">&nbsp;{{this._service.userinfo.current_city}}
+        &nbsp;<i class="fa fa-circle" style="font-size:10px;color:#ccc"></i>&nbsp;  
+        <img src="assets/template/dashboard/Asset 70.svg" alt="Dash_img1" class="img_width_info">&nbsp;{{this._service.userinfo.country_code}}-{{this._service.userinfo.mobilenumber}}
+        &nbsp;<i class="fa fa-circle" style="font-size:10px;color:#ccc"></i>&nbsp;
+        <img src="assets/template/dashboard/Asset 69.svg" alt="Dash_img1" class="img_width_info">&nbsp;{{this._service.userinfo.email}}</p>
+      </div>
+      </div>
+  </div>
+  <div class="col-md-3">
+    <!-- <img src="assets/template/dashboard/Asset 62.svg" alt="Dash_img2"> -->
+    <div class="left_align">
+    <p id="profile_img"><i class="fa fa-user width_user" aria-hidden="true"></i>
+    </p>
+    <p class="img_text">Edit Info</p> 
+  </div> 
+  </div>
+  </div>
+  <hr>
+  <!-- future Edu -->
+  <h4 class="pbinfo_head">Future Educational Preference</h4>
+  <div class="row" >
+  <div class="col-md-4">
+    <p class="pb_subhead">Course Interested</p>
+    <p class="pb_subtext" *ngIf="education_info ">{{education_info.future_education.aoi}}</p>
+  </div>
+  <div class="col-md-4">
+      <p class="pb_subhead">Preferred Country </p>
+      <p class="pb_subtext" *ngIf="education_info">{{education_info.future_education.country}}</p>
+  </div>
+  <div class="col-md-4">
+      <p class="pb_subhead">Plan to Pursue in</p>
+      <p class="pb_subtext" *ngIf="education_info">{{education_info.future_education.start_at}}</p>
+  </div>
+  </div>
+  <hr>
+  <!-- current edu -->
+  <h4 class="pbinfo_head">Current Educational Information</h4>
+  <div class="row">
+  <div class="col-md-4">
+    <p class="pb_subhead">Graduation Stream</p>
+    <p class="pb_subtext" *ngIf="education_info">{{education_info.current_education.specialization}}</p>
+  </div>
+  <div class="col-md-4">
+      <p class="pb_subhead">Graduation Percentage</p>
+      <p class="pb_subtext" *ngIf="education_info">{{education_info.current_education.academic_score}}%</p>
+  </div>
+  <div class="col-md-4">
+      <p class="pb_subhead">Year of Graduation</p>
+      <p class="pb_subtext" *ngIf="education_info">{{education_info.current_education.year_of_graduation}}</p>
+  </div>
+  </div>
+  <hr>
+  <br><br>
+  <app-dashboard-shortlisting></app-dashboard-shortlisting>
+</div>
+    </div>
+    
+  </div>
+</div>
+
+
+<app-footerpage></app-footerpage>

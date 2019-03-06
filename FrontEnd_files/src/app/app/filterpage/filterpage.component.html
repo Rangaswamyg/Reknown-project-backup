@@ -1,0 +1,433 @@
+<div style="background-color: #774fe5">
+  <app-navbar></app-navbar>
+</div>
+<div class="container-fluid topsectionalign">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="fontalgntxt">Program & University &nbsp;
+        <i class="fa fa-angle-right"></i> &nbsp; All &nbsp;</p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="fontalgnhead">Search Program and Universities</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <span *ngIf="this._indexservice.allItemscount" class="fontalgntxt1">{{this._indexservice.allItemscount}} Records found</span>
+    </div>
+
+    <div class="col-md-6 sortdrpdwnalign">
+      <div class="dropdwnalign">
+        <div class="container">
+          <!-- <a class=" btn text-muted dropdownfa" data-toggle="dropdown" href="#">Sort by</a>
+                <ul class="dropdown-menu" [(ngModel)]="sortBy" name="sortBy" (ngModelChange)="onsort($event)">
+                  <li class="dropdown-item" [ngValue]="name" *ngFor="let s of sort"><a class="textclr">{{s}}</a></li>
+                  <li class="dropdown-item"><a class="textclr">Item II</a></li>
+                  <li class="dropdown-item"><a class="textclr">Item III</a></li> -->
+          <!-- <li class="dropdown-item"><a class="textclr" href="#">Item IV</a></li>
+                  <li class="dropdown-item"><a class="textclr" href="#">Item V</a></li>
+                  <li class="dropdown-item"><a class="textclr" href="#">Other</a></li> -->
+          <!-- </ul> -->
+          <div class="select-wrapper-sort">
+            <select id="dLabelsort" [(ngModel)]="sortBy" name="sortBy" (ngModelChange)="onsort($event)">
+              <option [ngValue]=" ">Sort</option>
+              <option [ngValue]="s" *ngFor="let s of sort">Courses</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr style="border-top:1px solid rgba(0, 0, 0, 0.04);">
+<br>
+
+<!-- filter and university details-->
+<div class="container-fluid filtersectionalign">
+  <div class="row">
+    <div class="col-md-4 filterseccol">
+
+      <div class="leftfilternav">
+        <h1 class="filternavhead">Modify your search</h1>
+        <p class="filternavtxt">Study Destination</p>
+        <!-- Study destination dropdown-->
+        <div class="container1">
+          <div class="select-wrapper">
+            <select id="dLabelcountry" [(ngModel)]="selectedcountry" name="selectedcountry" (ngModelChange)="onchangeDropdown($event)">
+              <option [ngValue]=" ">Change Country</option>
+              <option class="textclr" [ngValue]="country._id.id" *ngFor="let country of country_dropdown">{{country._id.name}}</option>
+              <!-- <option class="textclr">Employment 2</option>
+                      <option class="textclr">Employment 3</option>
+                      <option class="textclr">Employment 4</option>
+                      <option class="textclr">Employment 5</option>
+                      <option class="textclr">Employment 6</option> -->
+
+            </select>
+          </div>
+          <!-- <button id="dLabel" class="dropdownfa1" data-toggle="dropdown">Change Country</button>
+                <ul class="dropdown-menu dropdwnscrol dropdown-menu-filter" [ngModel]="selectedcountry" (ngModelChange)="selectedcountry" name="selectedcountry">
+                  <li class="dropdown-item" *ngFor="let country of country_dropdown"><span class="textclr">{{country.name}}</span></li>
+                  <li class="dropdown-item"><span class="textclr">option 2</span></li>
+                  <li class="dropdown-item"><span class="textclr">option 3</span></li>
+                  <li class="dropdown-item"><span class="textclr">option 4</span></li>
+                  <li class="dropdown-item"><span class="textclr">option 5</span></li>
+                  <li class="dropdown-item"><span class="textclr">option 6</span></li>
+                </ul> -->
+        </div>
+        <!--end dropdown-->
+        <p class="filternavtxt">Program Level</p>
+        <!--checkbox-->
+        <div class="centeralign">
+          <div class="container3">
+            <div class="checkbxbg">
+              <div class="scrollbar">
+                <div class="overflow">
+                  <!-- <form [formGroup]="form">
+              <label class="customcheck" formArrayName="program_levels" *ngFor="let program_level of form.controls.program_levels.controls; let i= index">
+                <input type="checkbox" (change)="onCheckChange($event)" [formControlName]="i">{{program_levels[i]}}
+                <span class="checkmark"></span>
+              </label>
+                          </form> -->
+
+                  <!-- <label class="customcheck" *ngFor="let program_level of program_levels; let i= index">
+                              <input type="checkbox" [checked]="program_level.checked" (change)="onCheckboxChange(program_level,$event)" >{{program_levels[i]}}
+                              <span class="checkmark"></span>
+                            </label> -->
+                  <form [formGroup]="form">
+                    <label class="customcheck" *ngFor="let program_level of program_levels">
+                      <input type="checkbox" (change)="onCheckboxChange(program_level.level,$event.target.checked)">{{program_level.level}}
+                      <span class="checkmark"></span>
+                    </label>
+                  </form>
+                  <!-- <label class="customcheck">Bachelor's Degree
+                <input type="checkbox" (change)="Onfunction($event)">
+                <span class="checkmark"></span>
+              </label>
+              <label class="customcheck">Master's Degree
+                  <input type="checkbox" (change)="Onfunction2($event)">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="customcheck">PhD
+                    <input type="checkbox" (change)="Onfunction3($event)">
+                    <span class="checkmark"></span>
+                  </label> -->
+                  <!-- <label class="customcheck">Master's Degree
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="customcheck">Doctorate/PhD
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label> -->
+                  <!--sample-->
+                  <!-- <label class="customcheck">Diploma/Certificate
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="customcheck">Bachelor's Degree
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label> -->
+                  <!-- <label class="customcheck">Master's Degree
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="customcheck">Doctorate/PhD
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <p class="filternavtxt">Area of Interest</p> -->
+        <!--checkbox-->
+        <!-- <div class="centeralign">
+          <div class="container3">
+            <div class="checkbxbg">
+              <div class="scrollbar">
+                <div class="overflow">
+                  <label class="customcheck">Agriculture
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label> -->
+                  <!--sample check-->
+                  <!-- <label class="customcheck">Agriculture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Agriculture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Agriculture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Agriculture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Agriculture
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Computer Science & IT
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Creative Arts & Design
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="customcheck">Engineering & Technology
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label> -->
+                  <!--end sample-->
+                <!-- </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <p class="filternavtxt">Course Specialization</p>
+        <!-- Course Specialization dropdown-->
+        <div class="container2">
+          <form [formGroup]="form" novalidate>
+            <div class="form-group">
+                <input type="text" class="form-control" name="programsearch" formControlName='programsearch'(click)='programtoggleDropdown()' (change)="Onprogramchange()" placeholder="Select Course Specialization" required>
+                <!-- <label class="form-control-placeholder" for="c_name" >Select Course Specialization</label> -->
+              <!-- custom auto complete -->
+              <div *ngIf="programshowDropdown" class="country-container-dropdown">
+                <div (click)="programselectValue(program)" class="countryalignmnt" *ngFor="let program of programlist | searchProgramFilter:getprogramSearchValue()">{{program}}</div>
+            </div>
+              </div>
+              </form>
+
+        </div>
+        <!--end dropdown-->
+        <p class="filternavtxt">Exams Accepted</p>
+        <div class="row container3">
+          <div class="col-md-4 aligndrpdwn">
+
+            <div class="select-wrapper-exam">
+              <select id="dLabel1" (change)="scoredropdownchanged($event.target.value)">
+                <option>Select Exam</option>
+                <option class="textclr" *ngFor="let examlist of this._indexservice.exam_Api">{{examlist}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-1" style="margin-left:22px;"></div>
+          <div class="col-md-4 aligndrpdwn1">
+
+            <div class="select-wrapper-exam">
+              <select id="dLabel1" [(ngModel)]="selectedexamscore" name="selectedexamscore" (ngModelChange)="onchangeExam($event)">
+                <option [ngValue]=" ">Any Score</option>
+                <option class="textclr" [ngValue]="examscorelist" *ngFor="let examscorelist of examscore">{{examscorelist}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- course list (filter details) -->
+    <div class="col-md-7" style="padding-right: 0px;padding-left: 15px;">
+      <!-- <span [hidden]="filterdata_count.count == 0">records not found</span> -->
+
+      <!-- University part-->
+      <div *ngFor="let item of this._indexservice.allItems | orderBy:sortBy | paginate: { itemsPerPage: 10, currentPage: this._indexservice.current_page, totalItems: this._indexservice.allItemscount}; let i=index ">
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-auto">
+              <div class="img-wrap">
+                <img src="/assets/template/universityimages.jpg" class="img-fluid" alt="">
+              </div>
+            </div>
+            <div class="col bgcolor">
+              <div class="card-block px-2">
+                <h1 class="unihead" *ngIf="item.records.courseDetails[0]">{{item.records.courseDetails[0].name}}</h1>
+                <p class="unitxt text-muted">
+                   <a routerLink="/universitypage/{{item.records.university_details[0].id}}/{{item.records.location_details[0].id}}/{{item.records.country_name[0].id}}">
+                    <span *ngIf="item.records.university_details[0]">{{item.records.university_details[0].name}}</span>
+                  </a>
+                  &nbsp;
+                  <i class="fa fa-circle" style="font-size:6px;color:#774fe5;"></i> &nbsp;
+                  <span *ngIf="item.records.location_details[0]">{{item.records.location_details[0].name}},</span><span *ngIf="item.records.country_name[0]">{{item.records.country_name[0].name}}</span></p>
+                <!--white panel-->
+                <div class="panl">
+                  <div class="bgunidel">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <p class="unitxt1 text-muted">University Status</p>
+                        <p class="unitxt2">Public</p>
+                      </div>
+                      <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                        <p class="unitxt1 text-muted">Duration of Study</p>
+                        <p class="unitxt2">2 Years</p>
+                      </div>
+                      <div class="col-md-3">
+                        <p class="unitxt1 text-muted">Scholarship</p>
+                        <p class="unitxt2">Yes</p>
+                      </div>
+                      <div class="col-md-3">
+                        <p class="unitxt1 text-muted">Tution Fees</p>
+                        <p class="unitxt2"><span *ngIf="item.records.country_name[0]">{{item.records.country_name[0].currency}}</span>&nbsp;<span *ngIf="item">{{item.fees_min}}</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--button-->
+
+                <div class="panl1">
+                  <a class="addToCompare">
+                    <button class="btn1 btn-outline-success-submt " type="submit" (click)="onAddData(item.records.university_details[0],item.records.location_details[0],item.records.country_name[0])">Add to Compare</button>                  </a>&nbsp; &nbsp;
+
+                  <button class="btn1 btn-outline-success-submt" type="submit" (click)="probabilityPage()">Check Probability</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="a feedback" *ngIf="compBox" id="mybutton">
+        <div id="rcorners2">
+          <h4 style="display: flex;color:black">Add universities to compare
+            <p style="padding-left: 165px;font-size: 15px;" (click)="removeAll()">Clear All</p>
+          </h4>
+
+          <div class="row">
+            <div class="col-md-4" style="padding-bottom: 15px;" *ngFor="let comp of this._indexservice.comparableList; let i=index">
+              <div class="corners">
+                <h5 style="margin-bottom: -19px;" (click)="remove(i)">
+                  <i class="fa fa-times-circle" style="color:green ;padding-left: 190px; margin-bottom: 0px;"></i>
+                </h5>
+                <h5 style="margin-bottom: 0px;">{{comp.name}}</h5>
+                <p style="margin-bottom: 0px;">{{comp.loc_name}},{{comp.con_name}}</p>
+              </div>
+
+            </div>
+
+          </div>
+          <button class="btn1 btn-outline-success-submt" style="color:white;position: absolute; left:360px;top:118px;background-color: green;"
+            type="submit" (click)="comparePage()">Compare</button>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+<!-- pagination section -->
+<div class="container-fluid">
+  <!--showing result-->
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="pagination">
+        <div class="paginatntxt">
+          <!--pagination-->
+          <div style="float:right;padding-right:30px;">
+            <pagination-controls (pageChange)="this._indexservice.current_page = $event" (click)="pageChanged()"></pagination-controls>
+            <!-- <div *ngIf="pager.pages && pager.pages.length" class="pagination">
+                 <span [ngClass]="{disabled:pager.currentPage === 1}">
+                   <a class="page-link" (click)="setPage(1)">First</a>
+                 </span>
+                 <span [ngClass]="{disabled:pager.currentPage === 1}">
+                   <a class="page-link"(click)="setPage(pager.currentPage - 1)">Previous</a>
+                 </span>
+                 <span *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                   <a class="page-link"(click)="setPage(page)">{{page}}</a>
+                 </span>
+                 <span  [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                     <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+                   </span>
+                   <span [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                     <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+                   </span>
+               </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <br>
+</div>
+
+
+<app-footerpage></app-footerpage>

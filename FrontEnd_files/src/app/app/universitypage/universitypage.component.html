@@ -1,0 +1,722 @@
+<div style="background-color: rgb(41,111,220,0.8)">
+  <app-navbar></app-navbar>
+</div>
+<!-- <div *ngFor="let university of universitydescription"> -->
+<div class="container-fluid topsectionalign">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <p *ngIf="!filtername() && !filteruniname() && !filterprogramname()" class="fontalgntxt">Program & University &nbsp;
+        <!-- <i class="fa fa-angle-right"></i> &nbsp; MS &nbsp;
+        <i class="fa fa-angle-right"></i> &nbsp; Electrical Engineering&nbsp; -->
+        <i class="fa fa-angle-right"></i> &nbsp; {{universitydescription.name}}</p>
+        <p *ngIf="filtername() && !filteruniname() && !filterprogramname()" class="fontalgntxt">Program & University &nbsp;
+            <i class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.countrypageid._id.name}}
+            <i class="fa fa-angle-right"></i> &nbsp;{{universitydescription.name}}&nbsp;</p>
+        <p *ngIf="filteruniname() && !filtername() && !filterprogramname()" class="fontalgntxt">Program & University &nbsp;
+            <i class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.universitysearch_home._id.name}}
+        </p>
+        <p *ngIf="filterprogramname() && !filteruniname() && !filtername()" class="fontalgntxt">Program & University &nbsp;
+            <i class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.programsearch_home._id.name}}
+            <i class="fa fa-angle-right"></i> &nbsp;{{universitydescription.name}}&nbsp;</p>
+        <!-- <i *ngIf="filtername() && !filteruniname() && !filterprogramname()" class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.countrypageid._id.name}}&nbsp;
+        <i *ngIf="filteruniname() && !filtername() && !filterprogramname()" class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.universitysearch_home._id.name}}&nbsp;
+        <i *ngIf="filterprogramname() && !filteruniname() && !filtername()" class="fa fa-angle-right"></i> &nbsp;{{this._indexservice.programsearch_home._id.name}}&nbsp; -->
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-1" *ngIf="universitydescription">
+      <a href="{{universitydescription.link}}">
+        <img src="{{universitydescription.logo}}"  class="logo_widthuni">
+      </a>
+    </div>
+    <div class="col-md-11" style="padding-top:26px;">
+      <h1 class="fontalgnhead">{{universitydescription.name}}</h1>
+      <p class="text-muted fontalign">{{universitypagedata.location_name}},{{universitypagedata.country_name}}</p>
+    </div>
+  </div>
+</div>
+<hr style="border-top:1px solid #f9f9f9">
+<!-- sub navigation -->
+<div class="containernav">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+          (pageScrollFinish)="doSmth($event)" href="#overview">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+          (pageScrollFinish)="doSmth($event)" href="#courses">Popular Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+          (pageScrollFinish)="doSmth($event)" href="#accommodation">Accommodation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+          (pageScrollFinish)="doSmth($event)" href="#scholarships">Scholarships</a>
+      </li>
+      <!-- <li class="nav-item">
+            <a class="nav-link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+              (pageScrollFinish)="doSmth($event)" href="#campus">Campus Details</a>
+          </li>-->
+      <!-- <li class="nav-item">
+                    <a class="nav-link" pageScroll [pageScrollOffset]="0" [pageScrollDuration]="2000" [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+                        (pageScrollFinish)="doSmth($event)" href="#visaguide">Visa Guide</a>
+                </li> -->
+
+    </ul>
+  </nav>
+</div>
+<hr>
+<!-- description -->
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-8">
+      <div id="overview">
+        <br>
+      </div>
+      <h3 class="countryhead">Overview about the university</h3>
+      <p class="countrytxt">{{universitydescription.overview}}
+      </p>
+    </div>
+    <div class="col-md-4 adaligncol4">
+      <div id="rcorner">
+        <h4 class="adhead">Popular Guides & Articles</h4>
+        <hr style="border-top-width: 3px;">
+        <h6 class="adtext">Study in {{universitypagedata.country_name}}:Timeline for September 2019 Intake</h6>
+        <p class="text-muted adtext1">1030 Comments | 2076 Views</p>
+        <hr>
+        <h6 class="adtext">Which to give for which course to study abroad</h6>
+        <p class="text-muted adtext1">704 Comments | 2076 Views</p>
+        <hr>
+        <h6 class="adtext">Most affordable MBA Colleges in {{universitypagedata.country_name}}</h6>
+        <p class="text-muted adtext1">704 Comments | 2076 Views</p>
+        <hr>
+        <h6 class="adtext">Cost of living for international students in USA</h6>
+        <p class="text-muted adtext1">704 Comments | 2076 Views</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-8">
+      <h3 id="courses" class="countryhead">
+        Popular courses in this university
+      </h3>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <!-- programlevel -->
+          <div class="select-wrapper popular">
+            <select id="dLabelprogramlevel" class="decorated" [(ngModel)]="selectedprogramlevel" name="selectedprogramlevel" (ngModelChange)="onchangeDropdown($event)">
+              <option [ngValue]=" ">Select Program Level</option>
+              <option class="textclr" [ngValue]="courselevel.level" *ngFor="let courselevel of program_levels">{{courselevel.level}}</option>
+             </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- specialization -->
+          <div class="select-wrapper ">
+            <select id="dLabelspecialization" class="decorated" [(ngModel)]="selectedcourses" name="selectedcourses" (ngModelChange)="onchangecoursesDropdown($event)">
+              <option [ngValue]=" ">Select Specialization</option>
+              <option class="textclr" [ngValue]="courseslist.courseDetails[0].name" *ngFor="let courseslist of universitycourseinfo | universitypageselectbox:selectedprogramlevel">{{courseslist.courseDetails[0].name}}</option>
+              
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 popular">
+          <!-- view all courses -->
+          <p class="txtalign_courses" (click)="viewallcourse()">View All Courses</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="prob_bg">
+          <div class="scrollbar">
+            <div class="overflow">
+              <div *ngFor="let courselist of universitycourseinfo | coursesfilterselectbox:selectedcourses">
+              <h1 class="unihead">{{courselist.courseDetails[0].name}}</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">1st Year Fees</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Eligibility</p>
+                          <p class="unitxt2">IELTS: {{courselist.ielts}}</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship</p>
+                          <p class="unitxt2">Yes</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Upcoming Intake</p>
+                          <p class="unitxt2">September 2019</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Check Probability</button>
+                </div>
+              </div>
+            </div>
+              <hr class="hr_width">
+
+              <!-- sample -->
+              
+              <!-- end sample -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 adaligncol4">
+      <div id="rcorner1">
+        <h4 class="rcornerhead">Find your Dream University</h4>
+        <hr style="border-top-width: 3px;">
+        <div class="container1">
+          <button id="dLabel" class="dropdownfa1" data-toggle="dropdown">Select Course of Interest</button>
+          <ul class="dropdown-menu dropdwnscrol dropdown-menu-filter">
+            <li class="dropdown-item">
+              <span class="textclr">option 1</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="textclr">option 2</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="textclr">option 3</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="textclr">option 4</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="textclr">option 5</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="textclr">option 6</span>
+            </li>
+          </ul>
+        </div>
+        <div class="container1">
+          <button id="dLabel" class="dropdownfa2" data-toggle="dropdown">Choose Country</button>
+          <ul class="dropdown-menu dropdwnscrol dropdown-menu-filter">
+            <li class="dropdown-item">
+              <p class="textclr">Course 1</p>
+            </li>
+            <li class="dropdown-item">
+              <p class="textclr">Course 2</p>
+            </li>
+            <li class="dropdown-item">
+              <p class="textclr">Course 3</p>
+            </li>
+            <li class="dropdown-item">
+              <p class="textclr">Course 4</p>
+            </li>
+            <li class="dropdown-item">
+              <p class="textclr">Course 5</p>
+            </li>
+            <li class="dropdown-item">
+              <p class="textclr">Course 6</p>
+            </li>
+          </ul>
+        </div>
+        <div class="container1">
+          <div class="row alignadmbl">
+            <div class="col-md-6" style="padding-left: 15px;">
+              <button id="dLabel1" class="dropdownfa3" data-toggle="dropdown">Select Exam</button>
+              <ul class="dropdown-menu dropdwnscrol dropdown-menu-filter1">
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 1</div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 2</div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 3</div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 4</div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 5</div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="textclr">Exam 6</div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 alignadcolmbl" style="padding-left:0px;">
+              <button id="dLabel1" class="dropdownfa4" data-toggle="dropdown">Any Score</button>
+              <ul class="dropdown-menu dropdwnscrol dropdown-menu-filter1">
+                <li class="dropdown-item">
+                  <option class="textclr">Score 1</option>
+                </li>
+                <li class="dropdown-item">
+                  <option class="textclr">Score 2</option>
+                </li>
+                <li class="dropdown-item">
+                  <option class="textclr">Score 3</option>
+                </li>
+                <li class="dropdown-item">
+                  <option class="textclr">Score 4</option>
+                </li>
+                <li class="dropdown-item">
+                  <option class="textclr">Score 5</option>
+                </li>
+                <li class="dropdown-item">
+                  <option class="textclr">Score 6</option>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="btncenter">
+          <button class="btn btn-outline-success" type="submit">
+            Find Universities
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+
+    <div class="col-md-8">
+      <!-- Accommodation -->
+      <h3 id="accommodation" class="countryhead">
+        Accommodation
+      </h3>
+      <!-- list of accomdation -->
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td class="checktd">
+              <div id="roundcheck">
+                <i class="fa fa-check checkmark"></i>
+              </div>
+            </td>
+            <td class="checktext">High level of academic achievement in previous studies.</td>
+          </tr>
+
+          <tr>
+            <td class="checktd">
+              <div id="roundcheck">
+                <i class="fa fa-check checkmark"></i>
+              </div>
+            </td>
+            <td class="checktext">Strong reference letters.
+              <a href="#">Click here</a> for reference letter sample.</td>
+          </tr>
+
+          <tr>
+            <td class="checktd">
+              <div id="roundcheck">
+                <i class="fa fa-check checkmark"></i>
+              </div>
+            </td>
+            <td class="checktext">Written Statements.</td>
+          </tr>
+
+          <tr>
+            <td class="checktd">
+              <div id="roundcheck">
+                <i class="fa fa-check checkmark"></i>
+              </div>
+            </td>
+            <td class="checktext">Standardized tests such as the Graduate Record Examination (GRE) or the Graduate Management Admissions Test(GMAT).</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="txtalign_acc">More about accommodation details on university website</p>
+      <br>
+      <!-- Scholarship for this university -->
+      <h3 id="scholarships" class="countryhead">
+        Scholarships for this university
+      </h3>
+      <!-- scholarship -->
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <!-- programlevel -->
+          <div class="select-wrapper">
+            <select id="dLabelprogramlevel_sch" class="decorated">
+              <option selected="selected">Select Program Level</option>
+              <option class="textclr">Option 2</option>
+              <option class="textclr">Option 3</option>
+              <option class="textclr">Option 4</option>
+              <option class="textclr">Option 5</option>
+              <option class="textclr">Option 6</option>
+              <!-- <option class="textclr">Option 7</option>
+              <option class="textclr">Option 8</option>
+              <option class="textclr">Option 9</option>
+              <option class="textclr">Option 10</option>
+              <option class="textclr">Option 11</option>
+              <option class="textclr">Option 12</option>
+              <option class="textclr">Option 13</option>
+              <option class="textclr">Option 14</option>
+              <option class="textclr">Option 15</option>
+              <option class="textclr">Option 16</option>
+              <option class="textclr">Option 17</option>
+              <option class="textclr">Option 18</option>
+              <option class="textclr">Option 19</option>
+              <option class="textclr">Option 20</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- specialization -->
+          <div class="select-wrapper">
+            <select id="dLabelspecialization_sch" class="decorated">
+              <option selected="selected">Select Specialization</option>
+              <option class="textclr">Option 2</option>
+              <option class="textclr">Option 3</option>
+              <option class="textclr">Option 4</option>
+              <option class="textclr">Option 5</option>
+              <option class="textclr">Option 6</option>
+              <!-- <option class="textclr">Option 7</option>
+              <option class="textclr">Option 8</option>
+              <option class="textclr">Option 9</option>
+              <option class="textclr">Option 10</option>
+              <option class="textclr">Option 11</option>
+              <option class="textclr">Option 12</option>
+              <option class="textclr">Option 13</option>
+              <option class="textclr">Option 14</option>
+              <option class="textclr">Option 15</option>
+              <option class="textclr">Option 16</option>
+              <option class="textclr">Option 17</option>
+              <option class="textclr">Option 18</option>
+              <option class="textclr">Option 19</option>
+              <option class="textclr">Option 20</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <!-- view all courses -->
+          <p class="txtalign_courses">View All Scholarships</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="prob_bg">
+          <div class="scrollbar">
+            <div class="overflow">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <!-- sample -->
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <h1 class="unihead">Ontario Graduate Scholarship-Other Master Program</h1>
+              <div class="row">
+                <div class="col-md-9">
+                  <!--white panel-->
+                  <!--white panel-->
+                  <div class="panl">
+                    <div class="bgunidel">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">scholarship per student</p>
+                          <p class="unitxt2">INR 20 Lakhs</p>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+                          <p class="unitxt1 text-muted">Stream Applicable</p>
+                          <p class="unitxt2">Engineering</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Scholarship Type</p>
+                          <p class="unitxt2">Merit Based</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="unitxt1 text-muted">Number of Awards</p>
+                          <p class="unitxt2">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 28px;">
+                  <button class="btn1 btn-outline-success-submt" type="submit">Show Details</button>
+                </div>
+              </div>
+              <hr class="hr_width">
+              <!-- end sample -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <br>
+      campus Details
+      <h3 id="campus" class="countryhead">
+          Campus Details
+        </h3> -->
+    </div>
+    <!-- advertisement -->
+    <div class="col-md-4 adaligncol4">
+      <!-- makemy trip ad -->
+      <!--img-->
+      <div class="advertise_bg">
+        <!-- ad logo-->
+        <div class="center_img">
+          <img class="ad_img2" src="../assets/template/triplogo.png" alt="logo">
+        </div>
+        <div class="ad_content">
+          <h3 class="ad_head">Flat 20% off</h3>
+          <p class="ad_text">on booking your air ticket
+            <br>for your education</p>
+        </div>
+      </div>
+      <div class="advertise_panel">
+        <p class="advertise_panel_txt">Get upto 20% off on using our code while booking your ticket.Sign Up and click the button below to get the offer
+          code.
+        </p>
+        <br>
+        <!-- button -->
+        <div class="btncenter">
+          <button class="btn btn-outline-success" type="submit">
+            Details
+          </button>
+        </div>
+
+      </div>
+      <br>
+      <br>
+      <!-- scholarship ad -->
+      <div class="scholar_bg">
+        <!-- logo-->
+        <div class="center_img">
+          <img class="ad_img2" src="../assets/template/logo.svg" alt="logo">
+          <h3 class="scholr_head">Scholarship Guide</h3>
+          <br>
+        </div>
+        <div class="scholarimg"></div>
+      </div>
+      <div class="advertise_panel">
+        <div class="btncenter">
+          <h3 class="sch_head">Find a scholarship</h3>
+          <p class="sch_text">Get ready to study in {{universitypagedata.country_name}} with our complete guide</p>
+          <!-- button -->
+          <br>
+          <button class="btn btn-outline-success" type="submit" style="width:176px;">
+            Download Free Guide
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+<!-- </div> -->
+<br>
+<app-footerpage></app-footerpage>

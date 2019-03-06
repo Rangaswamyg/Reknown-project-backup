@@ -1,0 +1,212 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+      <div class="vl"></div>
+    </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"  style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+          [style.width]="((this._probabilityService.profile_building_progress)*2.7)+'%'"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 54.svg" alt="image not found" width="25px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <hr style="width:1104px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+      <!-- exam score -->
+     <form [formGroup]="form"(submit)="onRegisterSubmit()">
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-10 prob_aligncol">
+                  <h3 class="prob_head">Your language exam scores</h3>
+                    <div class="scrollbar">
+                        <div class="overflow">
+                    <p class="prob_text">Enter Your language exam score details</p>
+                    <div formArrayName="exam_score">
+                        <div *ngFor="let examscore of form.controls.exam_score['controls']; let i=index">
+                    <p class="prob_subtext">Exam score Information - {{i+1}}
+                    <a *ngIf="form.controls.exam_score['controls'].length > 1" (click)="removeexamscoresinfo(i)" style="cursor: default"
+                        class="closebtn1" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </a>
+                    </p>
+                    <div [formGroupName]="i">
+                    <div class="row">
+                      <div class="col-md-3">
+                      <div class="prob_aligncol1">
+                          <div class="select-wrapper" >
+                            <select id="dLabelexam" name="exam" formControlName="exam" (change)="onchangeDropdownExam($event.target.value)">
+                              <option selected="selected">Exam</option>
+                              <option class="textclr" *ngFor="let exam of exams">{{exam.name}}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                      <div class="prob_aligncol1">
+                          <div class="select-wrapper">
+                            <select id="dLabelscore"  name="score" formControlName="score" (change)="onchangeDropdownScore($event.target.value)">
+                              <option selected="selected">Score</option>
+
+                              <option class="textclr" *ngFor="let score of exams">{{score.scores}}</option>
+
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                      <div class="prob_aligncol1">
+                          <div class="select-wrapper">
+                            <select id="dLabelattempts"  name="noa" formControlName="noa" (change)="onchangeDropdownAttempt($event.target.value)">
+                              <option selected="selected">Number of Attempts</option>
+                              <option class="textclr" *ngFor="let attempt of num_attempt">{{attempt}}</option>
+
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+                    </div></div></div>
+                    <div class="addfield">
+                        <a (click)="addexamscoresinfo()" style="cursor: default">
+                          Add another Exam Score
+                        </a>
+                      </div>
+                    <p class="prob_text" style="padding-top: 20px;">Enter your referees information</p>
+                    <div formArrayName="referees">
+                        <div *ngFor="let refereesinfos of form.controls.referees['controls']; let i=index">
+                    <p class="prob_subtext">Referees Information - {{i+1}}
+                    <a *ngIf="form.controls.referees['controls'].length > 1" (click)="removerefereesinfo(i)" style="cursor: default"
+                        class="closebtn" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </a>
+                    </p>
+                    <div [formGroupName]="i">
+                    <div class="row">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <input type="text" id="ref_name{{i+1}}" class="form-control" name="name" formControlName="name"
+                                required>
+                              <label class="form-control-placeholder" for="ref_name{{i+1}}">Name</label>
+                            </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <input type="text" id="Designation_name{{i+1}}" class="form-control" name="designation"
+                              formControlName="designation" required>
+                              <label class="form-control-placeholder" for="Designation_name{{i+1}}">Designation</label>
+                            </div>
+                      </div>
+                      <div class="col-md-4">
+                      <div class="prob_aligncol1">
+                          <div class="select-wrapper">
+                            <select id="dLabelreferredvia" name="via" formControlName="via" (change)="onchangeDropdownRef($event.target.value)">
+                              <option selected="selected">Referred Via</option>
+                              <option class="textclr" *ngFor="let ref of Ref_info">{{ref}}</option>
+
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+                    </div></div></div>
+                    <div class="addfield">
+                        <a  (click)="addrefereesinfo()" style="cursor: default">
+                          Add another Referees Information
+                        </a>
+                      </div>
+                    </div></div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+
+      <br><br>
+      <div class="prob_bg_footer" style="width:118%;">
+          <div class="row">
+        <div class="col-md-2" style="padding-left: 45px;">
+            <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+        </div>
+        <div class="col-md-8 progress_align">
+
+          <div class="progress" style="width:100%; top:0px; height:0.8rem; border-radius:0rem;">
+              <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100"
+              aria-valuemax="100" [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+            </div>
+            <p style="color: #962fdc;font-size: 12px;">4 of {{added_p_b.length}} Questions</p>
+
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-success" type="submit">Next</button>
+        </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footerpage></app-footerpage>
+

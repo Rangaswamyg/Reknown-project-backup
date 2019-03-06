@@ -1,0 +1,398 @@
+.vl {
+    border-left: 1px solid #ccc;
+      box-shadow: 0 3px 10px #e2e0e0;
+    height:100%;
+    position: absolute;
+    left: 92%;
+    top: 0;
+  }
+  .text_timeline{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 40px;
+    color: #737272;
+  }
+  p{
+    margin-bottom: 0px;
+  }
+  .left_navbar{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+  .img_width{
+  width: 22px;
+  }
+  .text_timeline:hover{
+  color: #774fe5;
+  }
+  .text_timeline:active{
+  color: #774fe5;
+  }
+  #firstcircle {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  width: 48px;
+  height: 48px;  
+  padding-top:8px;
+  text-align: center; 
+  }
+  #firstcircle1 {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  width: 50px;
+  height: 50px;  
+ 
+  text-align: center; 
+  }
+  * progress bar */
+.progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:7px;
+    top:25px;
+    position: relative;
+    width:24%;
+    
+    border-radius:0rem;
+}
+.container-fluid{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* Image */
+.imgcenter{
+    text-align:center;
+    padding-right: 90px;
+
+}
+/* Select Box of Eduaction,Specialization,Year of edu, grading */
+select{
+    outline: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+} 
+
+.select-wrapper {
+    position: relative;	 
+    width: 121px;
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 22px;
+  	position: absolute;
+  	top: 5px;
+      right: 10px;
+  	color: #434B67;
+  	pointer-events: none;
+}  
+#dLabel2{
+    width: 121px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    text-align: left;
+    padding: 7.5px 15px;
+    color: rgb(0, 0, 0);
+     font-size: 14px;
+}
+/* small dropdown */
+#dLabel1 {
+    width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: -0.3px;
+  font-size: 14px;
+}
+
+.select-wrapper1 {
+    position: relative;
+    width:196px;	 
+}
+
+.select-wrapper1:after {
+    font-family: FontAwesome;
+      content: '\f107';
+      font-size: 25px;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: #434B67;
+      pointer-events: none;
+}
+/* History of backlogs check mark */
+.customcheck {
+    display: block;
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    padding-bottom:4px;
+    color: #5a5a5a;
+}
+.customcheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 3px;
+    border:1px solid #774fe5;
+}
+.prob_wrkqus{ 
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.checkbxalign{
+    display: inline-flex;
+    padding-top: 20px;
+}
+.conference_button{
+    padding-left: 20px;
+} 
+
+/* On mouse-over, add a grey background color */
+.customcheck:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customcheck input:checked ~ .checkmark {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.customcheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.customcheck .checkmark:after {
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid #02cf32;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.prob_img{
+    width:330px;
+    padding-top: 150px;
+    padding-bottom: 40px;
+}
+.prob_bg{
+    background-color: #a9a9a914;
+    border-radius: 19px;
+    padding: 20px;
+}
+.prob_head{
+    font-size: 26px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+.prob_text{
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    color:#353535;
+}
+.prob_aligncol{
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 45px;
+
+}
+
+/* form group */
+.form-group {
+    position: relative;
+    margin-bottom: 0px;
+    width:190px;
+  }
+  .form-control{
+      width: 195px;
+  }
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 13px;
+    transition: all 200ms;
+    
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .form-control:focus + .form-control-placeholder,
+  .form-control:valid + .form-control-placeholder {
+    font-size: 100%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    color: #774fe5;
+  }
+    input[type="text"],input[type="email"] {
+        outline: none;
+        box-shadow:none !important;
+        border:1px solid #ccc !important;
+        }
+
+/* Footer Progress Bar */
+.prob_bg_footer{
+    background-color: #a9a9a914;
+    /* border-radius: 19px; */
+    padding: 30px; 
+}
+.progress_align
+{  
+    padding-left: 0px;
+    padding-right: 35px;
+    padding-top: 11px;
+}
+.hr-centerimg{
+    position: relative;
+    bottom: 32px;
+    left: 525px;
+    width:23px; 
+  }
+/* progress bar */
+/* .progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:0.8rem;
+    border-radius:0rem;
+} */
+/* button */
+.btn-outline-success{
+    color:#4c4b4b;
+    font-weight:500;
+    border-color:#47cc25;
+    width:90px;
+     height: 34px;
+     padding-top: 4px;
+  }
+.btn:hover{
+    background-color:transparent;
+}
+/* Close Button */
+.close{
+    font-size:1.7rem;
+    color:#9a9a9a;
+    
+}
+button{
+   outline: none !important;
+}
+.selectdrp2{
+    padding-left: 39px;
+}
+.textbox{
+    padding-left: 39px;
+}
+@media (min-width: 350px) and (max-width: 450px){
+    .imgcenter{
+        padding-right: 0px;
+    
+    }
+    .container-fluid{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .row>.prob_aligncol{
+        padding-top: 74px;
+        padding-left: 0px;
+        padding-right: 0px;
+        
+     }
+     .prob_bg>.prob_head{
+        font-size: 21px;
+        font-weight: 700;
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+    }
+    .prob_bg{
+        background-color: #a9a9a914;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: -webkit-center;
+        /* padding: 40px !important; */
+    }
+    .prob_text{
+        font-size: 15px;
+        font-weight: 600;
+        padding-bottom: 15px;
+        margin-bottom: 0px;
+        color:#353535;
+    }
+    .prgrow{
+        text-align: -webkit-center;
+    }
+    .prgnext{
+        padding-top: 9px;
+        padding-left: 25px;
+    }
+    .progress_align
+    {  
+        padding-left: 30px;
+    }
+    .selectdrp1{
+        padding-bottom: 11px;
+    }
+    .selectdrp2{
+        padding-bottom: 11px;
+        padding-left: 15px;
+    }
+    .form-control-placeholder{
+        left: 0px;
+    }
+    .textbox{
+        padding-bottom: 11px;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+}

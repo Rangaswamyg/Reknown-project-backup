@@ -1,0 +1,107 @@
+<!--navbar-->
+<div style="background-color: #774fe5">
+  <app-navbar></app-navbar>
+</div>
+<!-- body -->
+<form [formGroup]="form" (submit)="onSubmit()">
+
+<div class="alignscreen">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 prob_aligncol">
+     <div class="prob_bg">
+        <h3 class="prob_head">Your extracurricular activities
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </h3>
+          <div class="scrollbar">
+              <div class="overflow">
+          <p class="prob_text">Enter Your extracurricular activities details</p>
+          <div formArrayName="extracurricularactivities">
+              <div *ngFor="let extracurricularactivity of form.controls.extracurricularactivities['controls']; let i=index">
+          <p class="prob_subtext">Extracurricular Activities - {{i+1}}
+          <a *ngIf="form.controls.extracurricularactivities['controls'].length > 1" (click)="removeextracurricularinfo(i)" style="cursor: default"
+              class="closebtn" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </p>
+          <div [formGroupName]="i">
+          <div class="row">
+            <div class="col-md-4">
+            <div class="prob_aligncol1">
+                <div class="select-wrapper">
+                  <select id="dLabelcategory"  name="category" formControlName="category" (change)="onchangedropdownCategory($event.target.value)">
+                    <option selected="selected">Category</option>
+                    <option class="textclr" *ngFor="let c of categories">{{c.name}}</option>
+
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            <div class="prob_aligncol1">
+                <div class="select-wrapper">
+                  <select id="dLabelactivity" name="activity" formControlName="activity" (change)="onchangedropdownActivity($event.target.value)">
+                    <option selected="selected">Activity Level</option>
+                    <option class="textclr" *ngFor="let c of level">{{c}}</option>
+
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-10" style="padding-top:30px">
+              <div class="floating-field wide">
+                <textarea name="des_activity" formControlName="des_activity"  required></textarea>
+                <label>Describe about your extracurricular activity</label>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+        </div></div>
+        <div class="addfield">
+            <a (click)="addextracurricularinfo()" style="cursor: default">
+              Add another Extracurricular Activities
+            </a>
+          </div>
+          </div></div>
+
+       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="imgcenter">
+        <img class="prob_img" src="../assets/template/probabilitypageimg/8.png" alt="logo">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+<br>
+<div class="prob_bg_footer">
+  <div class="row">
+    <div class="col-md-2" style="padding-left: 80px;">
+      <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+    </div>
+    <div class="col-md-8 progress_align">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="100"
+        aria-valuemax="100" [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-outline-success" type="submit" >Next</button>
+    </div>
+  </div>
+</div>
+</form>
+
+<!--footer-->
+<app-footerpage></app-footerpage>
+

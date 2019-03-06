@@ -1,0 +1,431 @@
+/* progess bar footer */
+.prob_bg_footer{
+    background-color: #a9a9a914;
+    /* border-radius: 19px; */
+    padding: 30px; 
+}
+.progress_align
+{  
+    padding-left: 0px;
+    padding-right: 35px;
+    padding-top: 11px;
+}
+/* progress bar */
+.progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:0.8rem;
+    border-radius:0rem;
+}
+/* button */
+.btn-outline-success{
+    color:#4c4b4b;
+    font-weight:500;
+    border-color:#47cc25;
+    width:90px;
+     height: 34px;
+     padding-top: 4px;
+  }
+.btn:hover{
+    background-color:transparent;
+}
+
+/* body css */
+.container-fluid{
+    padding-left: 60px;
+    padding-right: 20px;
+}
+.prob_aligncol{
+    padding-top: 74px;
+    padding-left: 30px;
+    padding-right: 45px;
+
+}
+.imgcenter{
+    text-align:center;
+    padding-right: 90px;
+
+}
+.prob_img{
+    width:330px;
+    padding-top: 150px;
+    padding-bottom: 40px;
+}
+.prob_bg{
+    background-color: #a9a9a914;
+    border-radius: 19px;
+    padding: 20px;
+}
+.prob_head{
+    font-size: 26px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+.prob_text{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    color:#353535;
+}
+.prob_subtext{
+    padding-top:10px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#ccc;
+}
+   /* close button */
+
+   .close{
+    font-size:1.7rem;
+    color:#9a9a9a;
+    
+}
+button{
+   outline: none !important;
+}
+
+/* select dropdown */
+select{
+    outline: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+} 
+
+.select-wrapper {
+    position: relative;	 
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 25px;
+  	position: absolute;
+  	top: 4px;
+      right: 25px;
+  	color: #434B67;
+  	pointer-events: none;
+}
+#dLabelcategory {
+    width: 215px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#dLabelactivity {
+    width: 215px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.textclr{
+    color:black;
+    }
+    select:focus > option:checked { 
+        background-color: #ccc;
+        color: black;
+    }
+ .prob_aligncol1
+    {
+        padding-top:0px;
+    }
+/* form group */
+.form-group {
+    position: relative;
+    margin-bottom: 0px;
+    width:90%;
+  }
+  
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 7px;
+    transition: all 200ms;
+    opacity: 0.5;
+  }
+  
+  .form-control:focus + .form-control-placeholder,
+  .form-control:valid + .form-control-placeholder {
+    font-size: 100%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    color: #774fe5;
+  }
+    input[type="text"],input[type="email"],textarea{
+        outline: none;
+        box-shadow:none !important;
+        border:1px solid #ccc !important;
+        }
+textarea.form-control::placeholder {
+            font-weight: 300;
+            color:#ccc;
+}
+.closebtn{
+    font-size:1.7rem;
+    color:#9a9a9a;
+    position: relative;
+    left:362px;
+    top:3px;
+}
+.addfield{
+    font-size:15px;
+    font-weight: 600;
+    color: #656565;
+    padding-top: 0px;
+}
+
+/* scrollbar */
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+/* total width */
+.scrollbar::-webkit-scrollbar {
+    /* background-color:#fff; */
+    width:10px
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+    background-color:#eae7e7;
+    border:3px solid #f9f6f6;
+}
+.scrollbar::-webkit-scrollbar-track:hover {
+    background-color:#eae7e7;
+}
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color:#c1c0c0;
+    border-radius:1px;
+    border:5px solid #c1c0c0;
+    height:50px;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color:#c1c0c0;
+    border:5px solid #c1c0c0;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {display:none}
+
+/* div box 
+body{background-color:#babac0}*/
+.scrollbar {
+    height: 53vh;
+    width: 55vw;
+    min-width: 240px;
+    /* background: #fff; */
+    overflow-y: auto;
+  overflow-x: hidden;
+}
+.overflow{min-height: auto}
+
+@media (max-width: 1280px){
+    .closebtn{
+        left:370px;
+    }
+    .scrollbar{
+        height: 37vh !important;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1499px){
+.closebtn{
+        left:380px;
+}
+#dLabelcategory {
+    width: 230px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#dLabelactivity {
+    width: 230px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.scrollbar {
+    height: 37vh !important;
+    width: 56vw;
+    min-width: 240px;
+    /* background: #fff; */
+    overflow-y: auto;
+  overflow-x: hidden;
+}
+}
+
+@media (min-width: 1500px) and (max-width: 1700px){
+    textarea{
+        width:665px !important;
+    }
+.closebtn{
+        left:440px;
+}
+#dLabelcategory {
+    width: 270px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#dLabelactivity {
+    width:270px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.scrollbar {
+    height: 37vh !important;
+    width: 57vw;
+    min-width: 240px;
+    /* background: #fff; */
+    overflow-y: auto;
+  overflow-x: hidden;
+}
+
+}
+
+@media (min-width: 1800px) and (max-width: 1950px){
+    textarea{
+        width:770px !important;
+    }
+    .closebtn{
+        left:538px;
+    }
+    #dLabelcategory {
+        width: 320px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      text-align: left;
+      padding: 7.5px 15px;
+      color: #ccc;
+      letter-spacing: 0.7px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    #dLabelactivity {
+        width: 320px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      text-align: left;
+      padding: 7.5px 15px;
+      color: #ccc;
+      letter-spacing: 0.7px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .scrollbar {
+        height: 37vh !important;
+        width: 55.5vw;
+        min-width: 240px;
+        /* background: #fff; */
+        overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .container-fluid{
+        padding-left: 150px;
+        padding-right: 20px;
+    }
+}
+/* textarea css */
+/* h2 {
+    color: #ccc;
+    font-size: 16px;
+    } */
+    input1:focus ~ label, textarea:focus ~ label, input1:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #774fe5;
+    top: -3.25rem;
+    font-size: 16px;
+    padding-left:0px;
+    -webkit-transition: all 0.125s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    }
+    .floating-field {
+    border-radius: 5;
+    padding-right: 222px;
+    float: right;
+    width: 33.3333%;
+    margin: 2rem 0 1rem;
+    position: relative;
+    border:1px black #ccc;
+    }
+    .floating-field label {
+    color: #ccc;
+    padding: 1rem;
+    position: absolute;
+    top: 32px; 
+    left: 0;
+    -webkit-transition: all 0.25s ease-in-out(0.2, 0, 0.03, 1);
+    transition: all 0.25s ease-in-out;
+    } 
+    .floating-field.wide {
+    width: 100%;
+    }
+    input, textarea {
+    padding: 1rem 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+    outline: 0;
+    }
+    textarea {
+    width:585px;
+    border-radius:6px;
+    }

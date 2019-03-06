@@ -1,0 +1,132 @@
+.vl {
+    border-left: 1px solid #ccc;
+      box-shadow: 0 3px 10px #e2e0e0;
+    height:100%;
+    position: absolute;
+    left: 92%;
+    top: 0;
+  }
+  .text_timeline{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 40px;
+    color: #737272;
+  }
+  p{
+    margin-bottom: 0px;
+  }
+  .left_navbar{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+  .img_width{
+  width: 22px;
+  }
+  .text_timeline:hover{
+  color: #774fe5;
+  }
+  .text_timeline:active{
+  color: #774fe5;
+  }
+  #firstcircle {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  width: 48px;
+  height: 48px;  
+  padding-top:8px;
+  text-align: center; 
+  }
+  #firstcircle1 {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  width: 50px;
+  height: 50px;  
+ 
+  text-align: center; 
+  }
+   /* progress bar */
+.progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:7px;
+    top:25px;
+    position: relative;
+    width:24%;
+    
+    border-radius:0rem;
+}
+/* pbinfo */
+.pbinfo_head{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+span.round1 {
+    background-color:#e9ecef;
+    /* border: px solid #ccc; */
+    border-radius: 5px;
+    text-align:center;
+    width:15%;
+    color: #774fe5;
+    font-size:14px;
+    font-weight:550;
+    padding:6px;
+  }
+  .pbinfo_text{
+      font-size: 17px;
+      font-weight: 400;
+      color:#737272;
+      /* text-align: center; */
+  }
+.img_width_info{
+    width:15px;
+}
+.img_text{
+    color: #774fe5;
+    font-size: 15px;
+    font-weight:600;
+    cursor: pointer;
+    text-align: center;
+}
+.pb_subhead{
+    color: #888787;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.pb_subtext{
+    color:black;
+    font-size: 16px;
+    font-weight: 500;
+}
+/* profile img */
+#profile_img{
+    border-radius: 300px;
+    background: #ccc;
+    width: 80px;
+    height: 80px; 
+    text-align:center;
+  }
+  .width_user{
+  font-size:71px;
+  margin-top:4px;
+  color:#fff;
+  }
+  .left_align{
+      float: right;
+  }
+  .hr-centerimg{
+    position: relative;
+    bottom: 32px;
+    left: 525px;
+    width:23px; 
+  }

@@ -1,0 +1,209 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+        <div class="vl"></div>
+      </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress" >
+          <div class="progress-bar"  style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+          [style.width]="((this._probabilityService.profile_building_progress)*2.7)+'%'"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 54.svg" alt="image not found" width="25px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <hr style="width:1086px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+      <form [formGroup]="form" (submit)="onRegisterSubmit()">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 prob_aligncol">
+              <h3 class="prob_head">Your certifications details</h3>
+              <div class="checkbxalign">
+                <p class="prob_wrkqus">Have you done any diploma/ certification courses</p>
+                <div class="conference_button" *ngFor="let eventInfo2 of event">
+                  <label class="customcheck">{{eventInfo2.name}}
+                    <input type="radio" (click)="getValue(eventInfo2.name)" name="certifications" formControlName="certifications" [value]="eventInfo2.name" [ngClass]="{ 'is-invalid': submitted && f.certifications.errors }">
+                    <span class="checkmark"></span>
+                  </label>
+                  &nbsp;
+                </div>
+                <div *ngIf="submitted && f.certifications.errors" >
+                  <div *ngIf="f.certifications.errors.required" style="color:red">event status is required</div>
+                </div>
+              </div>
+              <div class="scrollbar">
+                <div class="overflow" *ngIf="this.buttonSel=='Yes'">
+                  <h4>Diploma certification</h4>
+                  <div formArrayName="diplomacertification" >
+                    <div *ngFor="let diplomacertifications of form.controls.diplomacertification['controls']; let i=index">
+                      <p class="prob_subtext">Diploma Certification - {{i+1}}
+                        <!-- close button -->
+                        <span style="padding-left: 60px;color: black;">
+                          <img src="assets/template/dashboard/Asset 61.svg" alt="not found" width="14px;"> &nbsp;&nbsp; Upload Certification
+
+                        </span>
+                        <a *ngIf="form.controls.diplomacertification['controls'].length > 1" (click)="removeDiplomacertification(i)" style="cursor: default;right: 0px;left:170px;"
+                          class="closebtn" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </a>
+                      </p>
+                      <div class="row" [formGroupName]="i">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" (click)="getCourspec(coursespecialization)" name="coursespecialization" formControlName="coursespecialization"
+                              id="course_name{{i+1}}" class="form-control" required>
+                            <label class="form-control-placeholder" for="course_name{{i+1}}">Course Specialization</label>
+                           {{spcMsg}}
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <!-- dropdown -->
+                          <div class="prob_aligncol1">
+                            <div class="select-wrapper">
+                              <select id="dLabelduration1" (click)="getDur()" name="duration_of_study" formControlName="duration_of_study" (change)="onchangeDropdownDuration($event.target.value)">
+                                <option selected="selected">Duration of Study</option>
+                                <option class="textclr" *ngFor="let dur of duration">{{dur}}</option>
+
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="addfield">
+                    <a (click)="addDiplomacertification()" style="cursor: default">
+                      Add Another Certification
+                    </a>
+                  </div>
+                  <br>
+                  <h4>Other certifications</h4>
+                  <div formArrayName="othercertification">
+                    <div *ngFor="let othercertifications of form.controls.othercertification['controls']; let i=index">
+                      <p class="prob_subtext">Other Certification - {{i+1}}
+                        <!-- close button -->
+                        <span style="padding-left: 60px;color: black;">
+                          <img src="assets/template/dashboard/Asset 61.svg" alt="not found" width="14px;"> &nbsp;&nbsp; Upload Certification
+
+                        </span>
+                        <a *ngIf="form.controls.othercertification['controls'].length > 1" (click)="removeOthercertification(i)" style="cursor: default;left: 170px;right: 0px;"
+                          class="closebtn1" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </a>
+                      </p>
+                      <div class="row" [formGroupName]="i">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input type="text" (click)="getCertified(certifiedcourse)" name="certifiedcourse" formControlName="certifiedcourse" id="certified_name{{i+1}}"
+                              class="form-control" required>
+                            <label class="form-control-placeholder" for="certified_name{{i+1}}">Certified Course</label>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="prob_aligncol1">
+                            <div class="select-wrapper">
+                              <select id="dLabelduration2" name="duration_of_study_other" formControlName="duration_of_study_other" (change)="onchangeDropdownDuration1($event.target.value)">
+                                <option selected="selected">Duration of Study</option>
+                                <option class="textclr" *ngFor="let dur of duration">{{dur}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="addfield">
+                      <a (click)="addOthercertification()" style="cursor: default">
+                        Add Another Certification
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <br>
+      <br>
+      <div class="prob_bg_footer" style="width:118%;">
+        <div class="row">
+          <div class="col-md-2" style="padding-left: 45px;">
+            <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+          </div>
+          <div class="col-md-8 progress_align">
+            <!-- progress bar -->
+            <div class="progress" style="width:100%; top:0px; height:0.8rem; border-radius:0rem;">
+              <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+                [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+            </div>
+            <p style="color: hsl(276, 71%, 52%);font-size: 12px;">6 of {{added_p_b.length}} Questions</p>
+
+
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-outline-success" type="submit">Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<app-footerpage></app-footerpage>

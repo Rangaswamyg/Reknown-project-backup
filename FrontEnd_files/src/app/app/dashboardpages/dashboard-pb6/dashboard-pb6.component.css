@@ -1,0 +1,457 @@
+.vl {
+    border-left: 1px solid #ccc;
+      box-shadow: 0 3px 10px #e2e0e0;
+    height:100%;
+    position: absolute;
+    left: 92%;
+    top: 0;
+  }
+  .text_timeline{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 40px;
+    color: #737272;
+  }
+  p{
+    margin-bottom: 0px;
+  }
+  .left_navbar{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+  }
+  .img_width{
+  width: 22px;
+  }
+  .text_timeline:hover{
+  color: #774fe5;
+  }
+  .text_timeline:active{
+  color: #774fe5;
+  }
+  #firstcircle {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  width: 48px;
+  height: 48px;  
+  padding-top:8px;
+  text-align: center; 
+  }
+  #firstcircle1 {
+    border-radius: 30px;
+  border: 2px solid #d2d0d0;
+  /* padding: 20px;  */
+  border-right-width: 0px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  width: 50px;
+  height: 50px;  
+ 
+  text-align: center; 
+  }
+  * progress bar */
+.progress-bar{
+    background-color:#774fe5;
+}
+.progress{
+    height:7px;
+    top:25px;
+    position: relative;
+    width:24%;
+    
+    border-radius:0rem;
+}
+.container-fluid{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.imgcenter{
+  text-align:center;
+  padding-right: 90px;
+
+}
+.prob_img{
+  width:330px;
+  padding-top: 150px;
+  padding-bottom: 40px;
+}
+.prob_bg_footer{
+  background-color: #a9a9a914;
+  /* border-radius: 19px; */
+  padding: 30px; 
+}
+.progress_align
+{  
+  padding-left: 0px;
+  padding-right: 35px;
+  padding-top: 11px;
+}
+/* progress bar */
+/* .progress-bar{
+  background-color:#774fe5;
+}
+.progress{
+  height:0.8rem;
+  border-radius:0rem;
+} */
+/* button */
+.btn-outline-success{
+  color:#4c4b4b;
+  font-weight:500;
+  border-color:#47cc25;
+  width:90px;
+   height: 34px;
+   padding-top: 4px;
+}
+.btn:hover{
+  background-color:transparent;
+}
+.prob_bg{
+  background-color: #a9a9a914;
+  border-radius: 19px;
+  padding: 20px;
+}
+.prob_head{
+  font-size: 26px;
+  font-weight: 700;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+}
+.prob_text{
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+  color:#353535;
+}
+.prob_aligncol{
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 45px;
+
+}
+.prob_aligncol1
+{
+  padding-top:10px;
+}
+
+/* form group */
+.form-group {
+  position: relative;
+  margin-bottom: 0px;
+  width:350px;
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 100%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+  color: #774fe5;
+}
+  input[type="text"],input[type="email"] {
+      outline: none;
+      box-shadow:none !important;
+      border:1px solid #ccc !important;
+      }
+/* checkbox */
+.customcheck {
+  display: block;
+  position: relative;
+  padding-left: 33px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 600;
+  padding-bottom:4px;
+  color: #5a5a5a;
+}
+
+/* Hide the browser's default checkbox */
+.customcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border-radius: 3px;
+  border:1px solid #774fe5;
+}
+
+/* On mouse-over, add a grey background color */
+.customcheck:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customcheck input:checked ~ .checkmark {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.inputBox{
+  width:308px;
+  height: 38px;
+  border-radius: 4px;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.customcheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customcheck .checkmark:after {
+  left: 5px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid #02cf32;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* select dropdown */
+select{
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+} 
+
+.select-wrapper {
+  position: relative;	 
+}
+
+.select-wrapper:after {
+font-family: FontAwesome;
+  content: '\f107';
+  font-size: 25px;
+  position: absolute;
+  top: 4px;
+    right: 45px;
+  color: #434B67;
+  pointer-events: none;
+}
+#dLabelcountry {
+  width: 308px;
+height: 40px;
+border-radius: 4px;
+background-color: #fff;
+border: solid 1px #ccc;
+text-align: left;
+padding: 7.5px 15px;
+color: #ccc;
+letter-spacing: 0.7px;
+font-size: 16px;
+font-weight: 600;
+}
+.textclr{
+  color:black;
+  }
+  select:focus > option:checked { 
+      background-color: #ccc;
+      color: black;
+  }
+
+  .hr-centerimg{
+    position: relative;
+    bottom: 32px;
+    left: 525px;
+    width:23px; 
+  }
+  
+  /* small dropdown */
+  /* #dLabelinterest {
+      width: 170px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    text-align: left;
+    padding: 7.5px 15px;
+    color: #ccc;
+    letter-spacing: -0.3px;
+    font-size: 14px;
+    font-weight: 600;
+  } */
+  
+  
+  .select-wrapper1 {
+      position: relative;	 
+  }
+  
+  .select-wrapper1:after {
+      font-family: FontAwesome;
+        content: '\f107';
+        font-size: 25px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: #434B67;
+        pointer-events: none;
+  }
+  .select-wrapper2 {
+      position: relative;	 
+  }
+  
+  .select-wrapper2:after {
+      font-family: FontAwesome;
+        content: '\f107';
+        font-size: 25px;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        color: #434B67;
+        pointer-events: none;
+  }
+
+
+  /* close button */
+
+.close{
+  font-size:1.7rem;
+  color:#9a9a9a;
+  
+}
+button{
+ outline: none !important;
+}
+
+@media (max-width: 1280px){
+  .form-group {
+      width:320px !important;
+    }
+    #dLabelspecialization{
+      width:150px !important;
+    }
+    #dLabelinterest{
+      width:150px !important;
+    }
+    #dLabelcountry{
+      width:322px !important;
+    }
+}
+@media (min-width: 1400px) and (max-width: 1499px){
+  form-group {
+      width:370px !important;
+    }
+    #dLabelspecialization{
+      width:177px !important;
+    }
+    #dLabelinterest{
+      width:177px !important;
+    }
+    #dLabelcountry{
+      width:370px !important;
+    }
+  
+}
+@media (min-width: 1500px) and (max-width: 1599px){
+  .form-group {
+      width:400px !important;
+    }
+    #dLabelspecialization{
+      width:192px !important;
+    }
+    #dLabelinterest{
+      width:192px !important;
+    }
+    #dLabelcountry{
+      width:400px !important;
+    } 
+}
+
+@media (min-width: 1600px) and (max-width: 1700px){
+  .form-group {
+      width:420px !important;
+    }
+    #dLabelspecialization{
+      width:200px !important;
+    }
+    #dLabelinterest{
+      width:200px !important;
+    }
+    #dLabelcountry{
+      width:420px !important;
+    } 
+}
+@media (min-width: 1800px) and (max-width: 1950px){
+  .container-fluid{
+      padding-left: 150px !important;
+      padding-right: 20px;
+  }
+  .form-group {
+      width:485px !important;
+    }
+    #dLabelspecialization{
+      width:235px !important;
+    }
+    #dLabelinterest{
+      width:235px !important;
+    }
+    #dLabelcountry{
+      width:485px !important;
+    } 
+}
+.country-container-dropdown1{
+  position: absolute;
+
+  z-index: 1;
+  width:100%;
+  /* height: 200px; */
+  max-height: 300px;
+  background: #f6f6f6;
+  overflow-y: auto;
+
+}
+.country-container-dropdown{
+  position: absolute;
+
+  z-index: 1;
+  width:100%;
+  /* height: 200px; */
+  max-height: 300px;
+  background: #f6f6f6;
+  overflow-y: auto;
+}
+.country1{
+  padding: 5px;
+}
+.country1:hover{
+  background: #962fdc;
+}

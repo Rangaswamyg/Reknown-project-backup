@@ -1,0 +1,184 @@
+.shrt_head{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+}
+.progress{
+    width:270px;
+    height:7px;
+    position: relative;
+    top:16px;
+    overflow: visible;
+    margin-bottom: 26px;
+}
+.progress-bar{
+   background-color:#28a745;
+   position: relative;
+   border-radius: 4px;
+}
+/* progress bar */
+.progress-info{
+    background-color: #28a745;
+      position: absolute;
+      bottom: -20px;
+      font-size: 10px;
+      line-height: 10px;
+      padding: 2px 3px 2px 4px;
+      right: -1.4em;
+      border-radius: 2px;
+}
+.progress-info:after{
+    bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #28a745;
+      border-width: 5px;
+      margin-left: -5px;
+}
+/* card */
+.card{
+    border-color: transparent;
+    background-color: #f7f7f7;
+    }
+    .img-wrap {
+     width: 200px;
+     height: 200px;
+     display: inline-block;
+     overflow: hidden;
+     margin: 0;
+   }
+   
+   div > img {
+     display: block;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     min-height: 100%;
+     min-width: 100%;
+     transform: translate(-50%, -50%);
+   }
+   .unihead{
+       font-size: 18px;
+       font-weight: 600;
+       padding-top: 15px;padding-bottom: 5px;
+       padding-left:15px;
+       margin-bottom:0px;
+   }
+   .unitxt{
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 0px;
+    padding-left:15px;
+}
+.unitxt1{
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.unitxt2{
+    font-size: 13px;
+    color:#774fe5;
+    text-align: center;
+    font-weight:601;
+    margin-bottom: 0px;
+    padding-top: 3px;
+}
+.panl{
+    padding-left:15px;
+    padding-right:52px;
+    padding-top: 15px;
+}
+.panl1{
+    padding-left:15px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+}
+.bgunidel{
+    background-color:white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+.btn1{
+ display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -moz-user-select:none;
+  border:1px solid transparent;
+  padding-top: 3px;padding-bottom: 3px;padding-left: 10px;padding-right: 10px;
+  font-size:1rem;
+  border-radius:.25rem;
+  transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-outline-success-submt{
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color:#28a745;
+    border-color:#28a745;
+    background-color: transparent;
+}
+.btn-outline-success-submt:hover{
+    color: white;
+    border-color:#28a745;
+    background-color: #28a745;
+}
+.btn1:focus{
+    box-shadow:0 0 0 .1rem #28a745;
+}
+
+/* scrollbar */
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+/* total width */
+.scrollbar::-webkit-scrollbar {
+    /* background-color:#fff; */
+    width:10px
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+    background-color:#eae7e7;
+    border:3px solid #fff;
+}
+.scrollbar::-webkit-scrollbar-track:hover {
+    background-color:#eae7e7;
+}
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color:#c1c0c0;
+    border-radius:1px;
+    border:5px solid #c1c0c0;
+    height:50px;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color:#c1c0c0;
+    border:5px solid #c1c0c0;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {display:none}
+
+/* div box 
+body{background-color:#babac0}*/
+.scrollbar {
+    height: 96vh;
+    width: auto;
+    min-width: 240px;
+    /* background: #fff; */
+    overflow-y: auto;
+  overflow-x: hidden;
+}
+.overflow{min-height: auto}
+

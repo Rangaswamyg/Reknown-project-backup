@@ -1,0 +1,72 @@
+<!-- <div class="btncenter">
+    <button class="btn btn-outline-success" type="submit"><b>Sign Up</b></button>
+</div>
+<ng-template #template> -->
+<!-- <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <!-- <div class="modal-dialog"> -->
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div style="text-align: center;padding-left:162px;">
+                    <!-- Custom Success/Error Message -->
+                    <div class="row show-hide-message">
+                      <div [ngClass]="messageClass">
+                        {{ message }}
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10"><p class="popup_text">Please enter the Verification code sent to the entered mobile number</p></div>
+            <div class="col-md-1"></div>
+          </div>
+          <form [formGroup]="form" (submit)="Onverifyotp(templatelogin)">
+          <div class="row">
+           <div class="col-md-1"></div>
+           <div class="col-md-10">
+            <div class="center_align">
+              <input type="text" name="otp_first" formControlName="otp_first" class="otp" maxlength="1">
+              <input type="text" name="otp_second" formControlName="otp_second" class="otp" maxlength="1">
+              <input type="text" name="otp_third" formControlName="otp_third" class="otp" maxlength="1">
+              <input type="text" name="otp_fourth" formControlName="otp_fourth" class="otp" maxlength="1">
+              <input type="text" name="otp_fifth" formControlName="otp_fifth" class="otp" maxlength="1">
+              <input type="text" name="otp_sixth" formControlName="otp_sixth" class="otp" maxlength="1">
+              </div>
+              <p class="mbl_txt">Change mobile number</p>
+              <!-- <div>Time left = <span id="timer"></span></div> -->
+           </div>
+           <div class="col-md-1"></div>
+          </div>
+          <br>
+          <button class="btn btn-outline-success alignbutton" type="submit">Verify OTP</button>
+        </form>
+        <button class="btn btn-outline-success alignbutton1" type="submit" (click)="resendotp()">Resend OTP</button>&nbsp;&nbsp;
+          <!-- <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10" style="padding-left: 130px"> -->
+              <!-- button -->
+              <!-- <div class="center_align"> -->
+                  <!-- <button type="submit"><b>Verify</b></button> -->
+              <!-- <button type="submit" [hidden]="this._service.status_otp == 'verified' || this._service.status_otp == 'invalid otp'"><b>Verify</b></button> -->
+             <!-- <button type="submit" *ngIf="this._service.status_otp == 'invalid otp'"><b>Resend otp</b></button> -->
+            <!-- </div> -->
+            <!-- </div>
+            <div class="col-md-1"></div>
+          </div> -->
+          <br>
+               </div>
+      <ng-template #templatelogin>
+        <app-login></app-login>
+      </ng-template>
+      <!-- </div> -->
+    <!-- </ng-template> -->

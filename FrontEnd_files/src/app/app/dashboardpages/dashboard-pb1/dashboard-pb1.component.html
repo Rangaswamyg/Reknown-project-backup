@@ -1,0 +1,237 @@
+<div style="background-color: #774fe5">
+  <app-dashnavbar></app-dashnavbar>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left_navbar">
+      <p class="text_timeline" style="color:#774fe5;">
+        <img src="assets/template/dashboard/Asset 49.svg" alt="Dash_img1" class="img_width"> &nbsp; Timeline</p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 50.svg" alt="Dash_img1" class="img_width"> &nbsp; Tools
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 51.svg" alt="Dash_img1" class="img_width"> &nbsp; Forms
+      </p>
+      <p class="text_timeline">
+        <img src="assets/template/dashboard/Asset 52.svg" alt="Dash_img1" class="img_width"> &nbsp; Mock test</p>
+      <div class="vl"></div>
+    </div>
+
+    <!-- <div class="col-md-1">
+      <div class="vl"></div>
+    </div> -->
+    <div class="col-md-9" style="right: 33px">
+      <br>
+      <div class="row" style="position: relative;left:95px;">
+        <div id="firstcircle1">
+          <img src="assets/template/dashboard/Asset 64.svg" alt="image not found" width="63px;">
+        </div>
+        <div class="progress" >
+          <div class="progress-bar"  style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100"
+          [style.width]="((this._probabilityService.profile_building_progress)*2.7)+'%'"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 54.svg" alt="image not found" width="25px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 55.svg" alt="image not found" width="23px;">
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+        <div id="firstcircle" style="margin-top: 7px;">
+          <img src="assets/template/dashboard/Asset 56.svg" alt="image not found" width="23px;">
+        </div>
+      </div>
+      <div class="row" style="position: relative;left:75px;">
+        <div classs="col-md-2">
+          <h6 style="color: #962fdc">Profile Building</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>University Shortlisting</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2" style="padding-left: 40px;">
+          <h6>Application Submission</h6>
+        </div>
+        <div class="col-md-1"></div>
+        <div classs="col-md-2">
+          <h6>Pre & Post Departure</h6>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <hr style="width:1086px;box-shadow: 0 1px 10px #e2e0e0;">
+      <img src="assets/template/dashboard/Asset 63.svg" alt="image not found" class="hr-centerimg">
+
+      <form [formGroup]="form" (submit)="onRegisterSubmit()">
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-10 prob_aligncol">
+              <h3 class="prob_head">Your current education level</h3>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="prob_text" style="font-size: 18px; font-weight: 600;">Enter your highest level of education</p>
+
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+
+                  <h5 class="prob_text" style="font-weight: 600;">
+                    <img src="assets/template/dashboard/Asset 61.svg" alt="not found" width="14px;"> &nbsp;&nbsp; Upload degree Certificate</h5>
+                </div>
+              </div>
+              <small style="color: #962fdc;">Highest Level of Education</small>
+              &nbsp;&nbsp;
+              <div class="row" style="padding-top: 8px;">
+                <div class="col-md-6">
+                  <div class="select-wrapper" style="width: 320px;">
+                    <select id="dLabellevel" class="decorated" name="level" formControlName="level" (change)="onchangeDropdownLevel($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.level.errors }">
+                      <option selected="selected" hidden selected> Select Level </option>
+                      <option class="textclr" *ngFor="let level of this._probabilityService.generalCourseList">{{level._id}}</option>
+                    </select>
+                    {{specMsg}}
+                  </div>
+                  <div *ngIf="submitted && f.level.errors" >
+                    <div *ngIf="f.level.errors.required" style="color: red;">Level is required</div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="select-wrapper">
+                    <select id="dLabelspecialization" (click)="getSpcial()" class="decorated" name="specialization" formControlName="specialization" (change)="onchangeDropdownSpec($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.specialization.errors }">
+                      <option selected="selected">Specialization</option>
+                      <option class="textclr" *ngFor="let spec of specializations">{{spec}}</option>
+                    </select>
+                   
+                  </div>
+                  <div *ngIf="submitted && f.specialization.errors" > 
+                    <div *ngIf="f.specialization.errors.required" style="color: red;">Specialization is required</div>
+                </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <div class="select-wrapper" style="width: 320px;">
+                    <select id="dLabelgraduation"  class="decorated" name="year_of_graduation" formControlName="year_of_graduation" (change)="onchangeDropdownYear($event.target.value)"  [ngClass]="{ 'is-invalid': submitted && f.year_of_graduation.errors }">
+                      <option selected="selected">Year of Graduation</option>
+                      <option class="textclr" *ngFor="let yr of Year">{{yr}}</option>
+
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && f.year_of_graduation.errors" >
+                    <div *ngIf="f.year_of_graduation.errors.required" style="color: red;">Year is required</div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="select-wrapper" style="width: 121px;">
+                        <select id="dLabelgrading" class="decorated" name="grade" formControlName="grade" (change)="onchangeDropdownGrade($event.target.value)">
+                          <option selected="selected">Grading</option>
+                          <option class="textclr" *ngFor="let grade of gradings">{{grade}}</option>
+                        </select>
+                        {{gradeMsg}}
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="form-group" >
+                        <input type="text" (click)="getAcademic_score()" value="" name="academic_score" formControlName="academic_score"
+                          id="a_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.academic_score.errors }"
+                          required>
+                        <label class="form-control-placeholder" for="a_name" style="padding-top: 9px;">Academic Score</label>
+                        <div *ngIf="submitted && f.academic_score.errors" >
+                          <div *ngIf="f.academic_score.errors.required" style="color: red;">grading required</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="padding-top: 30px;">
+                <div class="col-md-3">
+                  <h6>History of backlogs</h6>
+                </div>
+                <div *ngFor="let backlog of backlog_status">
+                  <div class="col-md-2" style="padding-left: 0px;">
+                    <label class="customcheck">{{backlog.name}}
+                      <input type="radio" (click)="getValue(backlog.name)" name="status_backlog" formControlName="status_backlog" [value]="backlog.name" [ngClass]="{ 'is-invalid': submitted && f.status_backlog.errors }">
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  
+                </div>
+                <div *ngIf="submitted && f.status_backlog.errors" >
+                  <div *ngIf="f.status_backlog.errors.required" style="color: red;">Select backlog status</div>
+                </div>
+                <div class="col-md-6" style="padding-left: 76px;">
+                  <div class="row">
+                    <div class="col-md-4 screen" style="padding-left: 0px;padding-right: 0px;" *ngIf="this.button=='Yes'">
+                      <div class="select-wrapper" style="width: 135px;left:6px;" >
+                        <select id="dLabelbacklog"  class="decorated" name="backlogs" formControlName="backlogs" (change)="onchangeDropdownNumBacklog($event.target.value)">
+                          <option selected="selected">no&nbsp;backlog</option>
+                          <option class="textclr" *ngFor="let number of number_of_Backlogs">{{number}}</option>
+
+                        </select>
+                        {{backlogMsg}}
+                      </div>
+                      <!-- <div *ngIf="submitted && f.backlogs.errors" >
+                        <div *ngIf="f.backlogs.errors.required" style="color: red;">Select number of backlogs </div>
+                      </div> -->
+
+                    </div>
+                    <div class="col-md-8" style="padding-left: 30px;">
+                      <input  autocomplete="off" style="width:230px;height:39px;border-radius:4px;" class="inputBox" type="text" (click)='unitoggleDropdown()' name="university"
+                        formControlName='university' placeholder="Enter your University" [ngClass]="{ 'is-invalid': submitted && f.university.errors }" required="required">
+
+                      <div *ngIf="showDropdown" class="country-container-dropdown">
+                        <div class="country" (click)="universityselectValue(i,i.name)" *ngFor="let i of indiaList | searchFilterSecondpageUni:getSearchValue()">
+                          {{i.name}}
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="submitted && f.university.errors" >
+                      <div *ngIf="f.university.errors.required" style="color: red;">University is required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+       
+      </div>
+   
+      <br><br>
+      <div class="prob_bg_footer" style="width:118%;">
+          <div class="row">
+        <div class="col-md-2" style="padding-left: 45px;">
+            <button class="btn btn-outline-success" type="submit" >Back</button>
+        </div>
+        <div class="col-md-8 progress_align">
+          <!-- progress bar -->
+          <div class="progress" style="width:100%; top:0px; height:0.8rem; border-radius:0rem;">
+              <div class="progress-bar" style="background-color:#774fe5;" role="progressbar" aria-valuenow="0" aria-valuemin="100"
+              aria-valuemax="100" [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+            </div>
+            <p style="color: #962fdc;font-size: 12px;">1 of {{added_p_b.length}} Questions</p>
+
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-outline-success" type="submit">Next</button>
+        </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footerpage></app-footerpage>

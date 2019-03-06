@@ -1,0 +1,78 @@
+<!-- <div class="container-fluid"> -->
+  <div class="scrollbar">
+    <div class="overflow">
+<div class="row">
+<div class="col-md-8">
+<h4 class="shrt_head">Your shortlisted universities</h4>
+</div>
+<div class="col-md-4">
+ <!-- progress bar -->
+ <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+      <span class="progress-info">30%</span>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-10" *ngIf="this._probabilityService.shortListingUni">
+<!-- card -->
+<div class="card" *ngFor="let item of this._probabilityService.shortListingUni.result | paginate: { itemsPerPage: 10, currentPage: p }">
+  <div class="row no-gutters" *ngFor="let uni of item.records.university_details;">
+    <div class="col-auto">
+      <div class="img-wrap">
+        <img src="{{uni.logo}}" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="col bgcolor" *ngFor="let con of item.records.country_name">
+      <div class="card-block px-2" *ngFor="let loc of item.records.location_details">
+       <h1 class="unihead" *ngFor="let progm of item.records.courseDetails">{{progm.name}}</h1>
+       <p class="unitxt text-muted">{{uni.name}} &nbsp;<i class="fa fa-circle" style="font-size:6px;color:#774fe5;"></i> &nbsp; {{loc.name}},{{con.name}}</p>
+       <!--white panel-->
+       <div class="panl">
+       <div class="bgunidel">
+       <div class="row">
+      <div class="col-md-3">
+        <p class="unitxt1 text-muted">University Status</p>
+        <p class="unitxt2">Public</p>
+      </div>
+      <div class="col-md-3" style="padding-left: 0px;padding-right: 0px;">
+          <p class="unitxt1 text-muted">Duration of Study</p>
+          <p class="unitxt2">2 Years</p>
+        </div>
+        <div class="col-md-2">
+            <p class="unitxt1 text-muted">Scholarship</p>
+            <p class="unitxt2">Yes</p>
+          </div>
+          <div class="col-md-4">
+              <p class="unitxt1 text-muted">Tution Fees</p>
+                    <p class="unitxt2">{{item.records.fees_min}} {{con.currency}} - {{item.records.fees_max}} {{con.currency}} </p>
+            </div>
+       </div>
+      </div>
+    </div>
+     <!--button-->
+     <div class="panl1">
+     <button class="btn1 btn-outline-success-submt" type="submit">Add to Compare</button>&nbsp; &nbsp;
+     <button class="btn1 btn-outline-success-submt" type="submit" style="width:100px;">Apply</button>
+    </div>
+      </div>
+    </div>
+    
+               
+   
+  </div>
+</div>
+<br><br>
+
+
+<!-- card -->
+</div>
+<div class="col-md-2"></div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+</div>
+<!-- </div> -->

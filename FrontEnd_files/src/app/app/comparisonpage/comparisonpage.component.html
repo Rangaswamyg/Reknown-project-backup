@@ -1,0 +1,371 @@
+
+<!--Navabar-->
+<div style="background-color: #296fdc">
+  <app-navbar></app-navbar>
+</div>
+<!--Header-->
+<br>
+<div class="container-fluid topsectionalign">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="fontalgntxt">Countries &nbsp;
+        <i class="fa fa-angle-right"></i> &nbsp;All Countries </p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="fontalgnhead">Compare colleges:</h1>
+    </div>
+  </div>
+  <p>You can compare up to 3 colleges</p>
+</div>
+<hr>
+<!-- <div *ngFor="let compObject of this._indexservice.comparableList">
+  <h3 *ngFor="let u of compObject.records.university_details">
+    univeersityName:{{u.name}}
+  </h3>
+</div> -->
+<div class="container-fluid topsectionalign">
+  <div class="row">
+    <div class="col-md-3">
+      <p class="fontalgnhead1">Add universities to compare</p>
+    </div>
+    <div class="col-md-3" style="padding-bottom: 15px;" *ngFor="let comp of this._indexservice.comparableList[0]; let i=index">
+      <div class="corners">
+          <h5 style="margin-bottom: 0px;" (click)="remove(i)">
+            <i class="fa fa-times-circle" style="color:green ;padding-left: 198px; margin-bottom: 0px;"></i>
+          </h5>
+          <h5 style="margin-bottom: 0px;" *ngIf="comp" >{{comp.name}}</h5>
+          <p style="margin-bottom: 0px;" *ngIf="comp" >{{comp.loc_name}},{{comp.con_name}}</p>
+        </div>
+
+  </div>
+    <div *ngIf="compAdd" class="col-md-3">
+        <form [formGroup]="form" novalidate>
+            <div >
+                <input  type="text" (click)='contoggleDropdown()' formControlName='search' placeholder="Enter your country" required="required">
+                <!-- <input [(ngModel)]="name" [ngModelOptions]="{standalone: true}"> -->
+                <div *ngIf="showDropdown" class="country-container-dropdown" >
+                  <div class="country"  (click)="countryselectValu(c,c.name)"*ngFor="let c of countryName | searchFilterProbCountry:getSearchValue()">
+                      {{c.name}}
+                  </div>
+                   </div>
+              </div>
+        
+        <br>
+        <br>
+        
+            <div  *ngIf="this._indexservice.probCon">
+                <input  type="text" (click)='loctoggleDropdown()' formControlName='locationsearch' placeholder="Enter your location" required="required">
+                <div *ngIf="showDropdown1" class="location-container-dropdown" >
+                  <div class="location" (click)="locationselectValu(l,l.name)"*ngFor="let l of locationList | searchFilterProbLoc:getLocSearchValue()">
+                      {{l.name}}
+                  </div>
+                   </div>
+              </div>
+        
+        <br>
+        <br>
+        <br>
+        {{msg}}
+        
+          <div *ngIf="this._indexservice.probLoc">
+              <input  type="text" (click)='unitoggleDropdown()' formControlName='universitysearch' placeholder="Enter your univesrity" required="required">
+              <div *ngIf="showDropdown2" class="university-container-dropdown" >
+                <div class="university" (click)="universityselectValu(u,u.name)"*ngFor="let u of universityName | searchFilterProbUni:getUniSearchValue()">
+                    {{u.name}}
+                </div>
+                 </div>
+            </div>
+           
+      </form>
+      
+        <!-- <div class="select-wrapper" style="width:215px;">
+            <select id="dLabelCountry" class="decorated" [(ngModel)]="countrySelected" (ngModelChange)="onchangeDropdownCountry($event)">
+              <option [ngValue]="undefined" hidden selected>  Select Country </option>
+              <option class="textclr" *ngFor="let c of countryName" [ngValue]="c.id">{{c.name}}</option>
+              </select>
+          </div> -->
+        <br>
+        <!-- <div class="select-wrapper" style="width:215px;" *ngIf="countrySelected">
+          <select id="dLabelLocation" class="decorated" [(ngModel)]="locSelected" (ngModelChange)="onchangeDropdownLocation($event)">
+            <option [ngValue]="undefined" hidden selected>  Select Location </option>
+            <option class="textclr" *ngFor="let l of locationList" [ngValue]="l.id">{{l.name}}</option>
+           </select>
+        </div> -->
+      <br>
+      <!-- <div class="select-wrapper" style="width:215px;" *ngIf="countrySelected && locSelected ">
+        <select id="dLabeluniversity" class="decorated" [(ngModel)]="universitySelected" (ngModelChange)="onchangeDropdownUniversity($event)">
+          <option [ngValue]="undefined" hidden selected>  Select University </option>
+
+          <option class="textclr" *ngFor="let u of universityName" [ngValue]="u.uni_id">{{u.name}}</option>
+         </select>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<hr>
+ <div class="row">
+  <div class="col-md-3" >
+      <div class="sideTxt">Universities:
+      </div>
+    </div>
+    <div class="col-md-3"  *ngFor="let comp of this._indexservice.comparableList[0];">
+    <div *ngIf="comp">
+      <img  src="{{comp.logo}}" class="img-fluid" alt="Responsive image">
+    </div>
+
+  </div>
+  <div *ngIf="compAdd" class="col-md-3">
+    <div class="empty">
+
+    </div>
+  </div>
+
+</div>
+ <br>
+<div class="container-fluid1">
+    <div class="sideTxt">About University </div>
+</div>
+<div class="container-fluid " style="height: auto;width: 100%;">
+  <div class="row">
+    <div class="col-md-3 border-r1" >
+
+    </div>
+    <div class="col-md-3 border-r1" *ngFor="let comp of this._indexservice.comparableList[0];" >
+      <div *ngIf="comp">
+      <!-- <div class="showMore" *ngFor="let u of comp.records.university_details" [class.show]="show">
+        {{u.overview}}
+  </div>
+      <button (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button> -->
+      <!-- <div> -->
+          <!-- <div *ngIf="comp.overview.length <= limit">{{comp.overview }}</div> -->
+          <!-- <br>
+          <div *ngIf="truncating && comp.overview.length > limit">
+              {{comp.overview | limitTo : limit}}
+
+              <button (click)="truncating = false">show more</button>
+            </div>
+            <div *ngIf="!truncating && comp.overview.length > limit">
+                {{comp.overview}}
+                <button  (click)="truncating = true">show less</button>
+              </div> -->
+
+
+      <!-- </div> -->
+      {{comp.overview }}
+    </div>
+  </div>
+    <div *ngIf="compAdd" class="col-md-3 border-right">
+      <p ></p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid1">
+  <div class="row ">
+    <div class="col-md-3">
+    <div class="sideTxt">University type</div>
+  </div>
+  <div class="col-md-3" *ngFor="let comp of this._indexservice.comparableList[0];">
+      <div class="sideTxt"  *ngIf="comp">{{comp.type}}</div>
+  </div>
+    <div *ngIf="compAdd" class="col-md-3 border-right">
+      <div class="sideTxt"></div>
+    </div>
+
+</div>
+<div class="container-fluid2">
+    <div class="row ">
+      <div class="col-md-3 border-right">
+      <div class="sideTxt">Established_year</div>
+    </div>
+    <div class="col-md-3 border-right" *ngFor="let comp of this._indexservice.comparableList[0];">
+        <div class="sideTxt" *ngIf="comp">{{comp.established_year}}</div>
+      </div>
+ <div *ngIf="compAdd" class="col-md-3 border-right">
+        <div class="sideTxt"></div>
+      </div>
+         <!-- <div class="col-md-3 border-right">
+          <div class="sideTxt">1989</div>
+        </div> -->
+    </div>
+  </div>
+  <div class="container-fluid1">
+      <div class="row">
+        <div class="col-md-3">
+        <div class="sideTxt">Accomodation</div>
+      </div>
+      <div class="col-md-3" *ngFor="let comp of this._indexservice.comparableList[0];">
+          <div class="sideTxt" *ngIf="comp">{{comp.accomodation}}</div>
+        </div>
+        <div *ngIf="compAdd" class="col-md-3 border-right">
+          <div class="sideTxt"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid2">
+        <div class="row">
+          <div class="col-md-3 border-right" >
+          <div class="sideTxt">Scholarship</div>
+        </div>
+        <div class="col-md-3 border-right" *ngFor="let comp of this._indexservice.comparableList[0];">
+            <div class="sideTxt" *ngIf="comp">{{comp.scholarship_status}}</div>
+          </div>
+          <div *ngIf="compAdd" class="col-md-3 border-right">
+            <div class="sideTxt"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid1">
+          <div class="row">
+            <div class="col-md-3">
+            <div class="sideTxt">Miscellaneous</div>
+          </div>
+          </div>
+        </div>
+        <div class="container-fluid2">
+            <div class="row">
+              <div class="col-md-3 border-right">
+              <div class="sideTxt">University email</div>
+            </div>
+            <div class="col-md-3 border-right" *ngFor="let comp of this._indexservice.comparableList[0];">
+                <div class="sideTxt" *ngIf="comp">{{comp.email}}</div>
+              </div>
+              <div *ngIf="compAdd" class="col-md-3 border-right">
+                <div class="sideTxt"></div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid1">
+              <div class="row">
+                <div class="col-md-3">
+                <div class="sideTxt">Website</div>
+              </div>
+              <div class="col-md-3" *ngFor="let comp of this._indexservice.comparableList[0];">
+                  <div class="sideTxt" *ngIf="comp">{{comp.link}}</div>
+                </div>
+                <div *ngIf="compAdd" class="col-md-3 border-right">
+                  <div class="sideTxt"></div>
+                </div>
+            </div>
+            </div>
+<br>
+<br>
+<!-- <table class="table table-striped">
+
+  <tbody>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>About&nbsp;University</span>
+      </th>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;"></th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.overview}}
+
+        </div>
+      </td>
+
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>University&nbsp;type</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.type}}
+
+        </div>
+      </td>
+
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>Established&nbsp;year</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.established_year}}
+
+        </div>
+      </td>
+
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>Accomadation</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.accomodation}}
+
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>Scholarship</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.scholarship_status}}
+
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+      <th style="font-size: 17px;">
+        <span>Miscellaneous</span>
+      </th>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <th style="font-size: 14px;">
+        <span>University&nbsp;email</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.email}}
+
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+      <th style="font-size: 14px;">
+        <span>Website</span>
+      </th>
+      <td *ngFor="let compObject of this._indexservice.comparableList">
+        <div *ngFor="let u of compObject.records.university_details">
+
+          {{u.link}}
+
+        </div>
+      </td>
+
+    </tr>
+  </tbody>
+</table>-->
+<app-footerpage></app-footerpage> 

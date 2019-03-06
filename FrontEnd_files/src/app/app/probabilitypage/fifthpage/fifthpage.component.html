@@ -1,0 +1,184 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+
+  <div style="font-family: 'Roboto', sans-serif;">
+
+    <div style="background-color: #774fe5">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 prob_aligncol">
+          <div class="prob_bg">
+
+            <h3 class="prob_head">Your projects and related information
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </h3>
+            <div class="scrollbar">
+              <div class="overflow">
+                  <div class="checkbxalign">
+                      <p class="prob_wrkqus">Have you attended any conferences/ workshops</p>
+                      <div class="conference_button" *ngFor="let eventInfo of event;">
+                      <label class="customcheck">{{eventInfo.name}}
+                          <input type="radio" (click)="getValue(eventInfo.name)" name="conf_proj_status" formControlName="conf_proj_status"  [value]="eventInfo.name">
+                          <span class="checkmark"></span>
+                        </label>&nbsp;</div>
+                        </div>
+                        <br>
+                        <div formArrayName="conference" *ngIf="this.buttonSel=='Yes'">
+               <div *ngFor="let eventInformation of form.controls.conference['controls']; let i=index">
+                <p style="color:rgb(224, 221, 221)">Event Information - {{i+1}}
+                  <a *ngIf="form.controls.conference['controls'].length > 1" (click)="removeeventInformation(i)" style="cursor: default"
+                    class="closebtn" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </a>
+                </p>
+
+                <div class="row" [formGroupName]="i" style=" padding-top:15px;padding-bottom:15px;">
+
+
+                  <div class="col-md-5 nameTxt">
+                    <div class="form-group">
+                      <input type="text"  (click)="getEventname(ev_name)" name="ev_name" formControlName="ev_name" id="Eventname" class="form-control" required>
+                      <label class="form-control-placeholder" for="Eventname">Name of the Event</label>
+                    </div>
+                  </div>
+                  <div class="col-md-3 eventDrp">
+                    <div class="select-wrapper1" style="width: 140px;">
+                      <select id="dLabel2" name="type" formControlName="type" (change)="onchangeDropdownEvent($event.target.value)">
+                        <option selected="selected">Event Type</option>
+                        <option class="textclr" *ngFor="let e of event_types">{{e}}</option>
+
+
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="select-wrapper1" style="width: 170px;">
+                      <select id="dLabel1" name="event_level" formControlName="event_level" (change)="onchangeDropdownLevel($event.target.value)">
+                        <option selected="selected">Level of Event</option>
+                        <option class="textclr" *ngFor="let evn_level of event_levels">{{evn_level}}</option>
+                     </select>
+                    </div>
+                  </div>
+
+
+
+                <div class="checkbxalign" style="padding-left:20px;">
+                    <p class="prob_wrkqus">You have</p>
+                    <div class="conference_button" *ngFor="let eventInfo1 of event1">
+                    <label class="customcheck">{{eventInfo1.name}}
+                        <input type="radio" id="eventInfo1{{i+1}}"  name="event_status" formControlName="event_status" [value]="eventInfo1.name">
+                        <span class="checkmark"></span>
+                      </label>&nbsp;</div>
+
+                      </div>
+                     <br>
+
+                    <div class="floating-field wide" style="padding-bottom: 20px;left:17px;">
+                        <textarea name="eventDescription" formControlName="eventDescription" required></textarea>
+                        <label>Describe about your presentation</label>
+                      </div>
+                    </div>
+              </div>
+              <div class="addfield">
+                <a (click)="addeventInformation()" style="cursor: default">
+                  Add another event detail
+                </a>
+              </div>
+            </div>
+
+               <br>
+                <p class= "prob_wrkqus" style="font-size:18px; margin-bottom: 0px;" >Your project details</p>
+                <div formArrayName="projects">
+                    <div *ngFor="let projectdetails of form.controls.projects['controls']; let i=index">
+
+
+                <p class="prob_subtext">Project - {{i+1}}
+                    <a *ngIf="form.controls.projects['controls'].length > 1" (click)="removeProjectdetails(i)" style="cursor: default"
+                        class="closebtn" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </a></p>
+                <div class="row"  [formGroupName]="i" style="padding-top: 7px; padding-bottom:5px;">
+                  <div class="col-md-5 nameTxt">
+                    <div class="form-group">
+                      <input type="text"  name="title" formControlName="title" id="Eventname" class="form-control" required>
+                      <label class="form-control-placeholder" for="Eventname">Project Title</label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 eventDrp" style=" padding-left: 15px;">
+                    <div class="select-wrapper1" style="width: 250px;">
+                      <select id="dLabel3" (click)="getPurpose(purpose)"  name="purpose" formControlName="purpose" (change)="onchangeDropdownPurpose($event.target.value)">
+                        <option selected="selected">Project Purpose</option>
+                        <option class="textclr" *ngFor="let p of project_purpose">{{p}}</option>
+
+                      </select>
+                    </div>
+                  </div><br><br><br>
+                  <div class="floating-field wide" style="padding-left: 15px;">
+                      <textarea  name="projectDescription" formControlName="projectDescription" required></textarea>
+                      <label style="padding-left: 22px;">Add description</label>
+                    </div>
+                </div></div>
+                <div class="addfield">
+                  <a (click)="addProjectdetails()" style="cursor: default">
+                    Add another project detail
+                  </a>
+                </div>
+              </div>
+
+                <br>
+                <div class="checkbxalign">
+                  <p class="prob_wrkqus">Have you done any Patents ?</p>
+                  <div class="conference_button" *ngFor="let patents of patents">
+                  <label class="customcheck">{{patents.name}}
+                      <input type="radio" (click)="getPatentValue(patents.name)" name="patents_status" formControlName="patents_status" [value]="patents.name">
+                      <span class="checkmark"></span>
+                    </label>&nbsp;</div>
+                    <div class="form-group" style="left:5px;" *ngIf="this.PatentSel=='Yes'">
+                      <input type="text"  name="succ" formControlName="succ" id="Eventname" class="form-control" required>
+                      <label class="form-control-placeholder" for="Eventname">No Patents</label>
+                    </div>
+
+                    </div>
+
+
+              </div>
+            </div>
+
+
+          </div>
+
+      </div>
+      <div class="col-md-4">
+          <div class="imgcenter">
+            <img class="prob_img" src="/assets/template/probabilitypageimg/5.png" alt="logo">
+          </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="prob_bg_footer">
+        <div class="row prgrow" >
+      <div class="col-md-2 prgback">
+
+
+          <button class="btn btn-outline-success" type="submit" (click)="onBackprePage()">Back</button>
+      </div>
+      <div class="col-md-8 progress_align">
+        <div class="progress">
+            <div class="progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="100"
+            aria-valuemax="100" [style.width]="(this._probabilityService.progress_percent)+'%'"></div>
+          </div>
+      </div>
+      <div class="col-md-2 prgnext">
+          <button class="btn btn-outline-success" type="submit">Next</button>
+      </div>
+        </div>
+      </div>
+  </div>
+  </form>
+  <br>
+  <app-footerpage></app-footerpage>

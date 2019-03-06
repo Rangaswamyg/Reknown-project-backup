@@ -1,0 +1,592 @@
+.error-text{
+    color:#dc3545;
+    font-size:80%;
+}
+
+.signuphead{
+    font-size: 23px;
+    font-weight: 650;
+    margin-bottom:0px;
+    padding-top:15px;
+    padding-bottom: 15px;
+}
+.signuptxt{
+    font-size: 17px;
+    color:#6c6c6c;
+    margin-bottom:0px;
+    padding-bottom: 15px;
+}
+
+select{
+    outline: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+} 
+
+.select-wrapper {
+    position: relative;	 
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 25px;
+  	position: absolute;
+  	top: 5px;
+      right: 10px;
+  	color: #434B67;
+  	pointer-events: none;
+}  
+#dLabelpersnl1{
+    width: 303px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#dLabelpersnl{
+    width: 140px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    text-align: left;
+    padding: 7.5px 15px;
+    color: #ccc;
+    letter-spacing: -0.3px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.select-wrapperprsnl {
+    position: relative;	 
+}
+
+.select-wrapperprsnl:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 25px;
+  	position: absolute;
+  	top: 2px;
+      right:0px;
+      left:120px;
+  	color: #434B67;
+  	pointer-events: none;
+}
+.select-wrapperprsnl1 {
+    position: relative;	 
+}
+
+.select-wrapperprsnl1:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+  	font-size: 25px;
+  	position: absolute;
+  	top: 0px;
+      right: 10px;
+  	color: #434B67;
+  	pointer-events: none;
+}
+#dLabel {
+    width: 320px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* preffered country */
+#dLabelfuturecountry {
+    width: 320px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#dLabel2 {
+    width: 350px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* for current country*/
+#dLabelcurrentcity {
+    width: 350px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* current city */
+#dLabelcurrentcity_sign {
+    width: 306px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  text-align: left;
+  padding: 7.5px 15px;
+  color: #ccc;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.textclr{
+    color:black;
+    }
+    select:focus > option:checked { 
+        background-color: #ccc;
+        color: black;
+    }
+    
+    #dLabel1 {
+        width: 170px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      text-align: left;
+      padding: 7.5px 15px;
+      color: #ccc;
+      letter-spacing: -0.3px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    #dLabelfuturespec {
+        width: 170px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      text-align: left;
+      padding: 7.5px 15px;
+      color: #ccc;
+      letter-spacing: -0.3px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .select-wrapper1 {
+        position: relative;	 
+    }
+    
+    .select-wrapper1:after {
+        font-family: FontAwesome;
+          content: '\f107';
+          font-size: 25px;
+          position: absolute;
+          top: 5px;
+          right: 10px;
+          color: #434B67;
+          pointer-events: none;
+    }
+
+/*Already Signup? Login Container*/
+.sign1{
+    background-color:#dcdcdc1c;width:100%;height:170px; 
+}
+.img{
+    width: 107px;
+}
+.sign2{
+   padding-top: 39px;
+}
+.sign3{
+    font-size: 35px;font-weight: 500;
+}
+.sign4{
+    font-size:18px;color:#6c6c6c;
+}
+.nowrap {
+    white-space: nowrap ;
+}
+/* Input label */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 13px;
+    transition: all 200ms;
+    opacity: 0.5;
+  }
+  
+  .form-control:focus + .form-control-placeholder,
+  .form-control:valid + .form-control-placeholder {
+    font-size: 100%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    color: #774fe5;
+  }
+  
+/* Body of Css */
+.signuphead{
+    font-size: 24px;
+    font-weight: 650;
+    margin-bottom:0px;
+    padding-top:15px;
+    padding-bottom: 15px;
+    }
+    .signuptxt{
+    font-size: 15px;
+    color:#6c6c6c;
+    margin-bottom:0px;
+    padding-bottom: 15px;
+    }
+    input[type="text"],input[type="email"] {
+        outline: none;
+        box-shadow:none !important;
+        border:1px solid #ccc !important;
+        }
+/* Checkbox */
+.checkbxbg{
+    background-color: white;
+    border-radius:7px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 20px;padding-bottom: 20px;
+    width: 280px;
+}
+.customcheck {
+    display: block;
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    padding-bottom:4px;
+    color: #5a5a5a;
+}
+
+/* Hide the browser's default checkbox */
+.customcheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 3px;
+    border:1px solid #774fe5;
+}
+
+/* On mouse-over, add a grey background color */
+.customcheck:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customcheck input:checked ~ .checkmark {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.customcheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.customcheck .checkmark:after {
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid #02cf32;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* SingUp button */
+.btncenter{
+    text-align:center;
+   
+  }
+.btn-outline-success{
+    font-size: 20px;
+    color: #47cc25;
+    border-color:#47cc25;
+    border-radius: 10px;
+      height: 50px;
+     width: 190px;
+     padding-top: 3px;
+  }
+  button:hover{
+    background-color: white;
+ }
+ @media (min-width: 1800px) and (max-width: 1920px) {
+    .container-fluid>.sign2{
+        padding-left:103px;
+     }
+ }
+
+ input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ccc;
+    font-size:15px;
+    font-weight: 600;
+  }
+  input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+    color: #ccc;
+    font-size:15px;
+    font-weight: 600;
+  }
+  input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+    color: #ccc;
+    font-size:15px;
+    font-weight: 600;
+  }
+  input[type="text"]:-moz-placeholder { /* Firefox 18- */
+    color: #ccc;
+    font-size:15px;
+    font-weight: 600;
+  }
+  .form-control{
+      border: solid 1px #ccc;
+      border-radius: 4px;
+  }
+  input[type="text"],input[type="password"]{
+      outline: none !important;
+      box-shadow: none !important;
+      border:  1px solid #ccc;
+  }
+  .msgcenter{
+      text-align: center;
+  }
+
+  /* otp input */
+  /* popup css */
+   /* popup */
+ 
+   .modal-dialog{
+    max-width: 700px !important;
+}
+  .popup_text{
+      text-align: center;
+      margin-bottom: 0px;
+      font-size: 15px;
+  }
+  .otp {
+    width:30px;
+    text-align:center;
+    border:1px solid #ccc !important;
+    border-right:none !important;
+     border-left:none !important;
+      border-top:none !important;
+    margin-right:10px;
+    outline:none !important;
+    height:30px;
+    font-size:16px;
+  }
+  .center_align{
+      text-align:center;
+  
+  }
+  /* popup css */
+  .modal{
+    max-width: 600px; /* respsonsive width */
+    margin-left:-40%; /* width/2) */ 
+}
+.logn_text
+{
+    color: #774fe5;
+    cursor: pointer;
+}
+.imgaligndsk{
+    text-align: right;
+}
+.signupcontainer
+{
+    width: 800px;height: auto;
+}
+.signuplastname{
+    padding-left: 40px;padding-top: 30px;
+}
+.signupcurrentcountry{
+    padding-top: 24px;padding-left: 37px;
+}
+.signupconfirmpassword{
+    padding-left: 40px;padding-top: 30px;
+}
+.signupcountrycode{
+    padding-left:40px;
+}
+.signupspec{
+    padding-left: 37px;
+}
+.signupareaint{
+    padding-left: 32px;
+}
+.signupprgramlevel{
+    padding-left: 37px;
+}
+.signupabout{
+    width:310px;
+}
+/* mobile response */
+@media (min-width: 350px) and (max-width: 450px) {
+    .img_widthmbl{
+        width:85px;
+        
+    }
+    .imgaligndsk{
+        text-align: center;
+    }
+    .mbltext{
+        text-align: center;
+        font-size: 20px;
+    }
+    .sign4{
+        font-size:15px;
+        text-align: center;
+    }
+    .sign2{
+        padding-top:10px !important;
+    }
+    .sign3{
+    font-size: 20px;
+    }
+    .logn_text{
+        font-size:14px;
+    }
+    .signupcontainer
+    {
+    width: auto !important;
+    height: auto;
+    }
+    .signuphead{
+     font-size: 16px;  
+     text-align : center; 
+    }
+    .signuptxt{
+        font-size: 14px;
+        text-align: center;
+    }
+    .signuplastname{
+        padding-left:15px !important;
+    }
+
+    .signupcurrentcountry{
+        padding-left: 15px;
+    }
+    .signupconfirmpassword{
+        padding-left: 15px;
+    }
+    .signupcountrycode{
+        padding-left: 15px;
+    }
+    #dLabelcurrentcity{
+        width:100% !important;
+    }
+    #dLabelcurrentcity_sign{
+        width : 100% !important;
+    }
+    #dLabel2{
+        width : 100% !important;
+    }
+    .signupspec
+    {
+    padding-top: 15px;
+    padding-left: 15px;
+    }
+    .signupQus{
+        font-size:17px !important;
+        text-align: center !important;
+    }
+    #dLabelfuturespec{
+        width: 100% !important;
+    }
+    #dLabel1{
+        width: 100% !important;
+    }
+    #dLabel{
+        width: 100% !important;
+    }
+    #dLabelfuturecountry{
+        width:100% !important;
+    }
+    .signupareaint{
+      padding-left: 15px;
+      padding-top: 20px;
+    }
+    .signupprgramlevel{
+        padding-left: 15px;
+    }
+    #dLabelpersnl{
+        width: 100%;
+    }
+    .select-wrapperprsnl:after{
+        left: auto !important;
+        right:10px !important;
+    }
+    .signupabout{
+        width: auto;
+    }
+}
+@media (min-width: 350px) and (max-width: 425px) {
+    .checkbxmbl{
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+}
+@media (min-width: 426px) and (max-width: 450px) {
+    .checkbxmbl{
+      padding-left: 175px;
+      padding-right: 175px;
+    }
+}
